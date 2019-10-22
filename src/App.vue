@@ -1,32 +1,61 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarResponsive"
+        aria-controls="navbarResponsive"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand" href="#">
+        <img src="@/assets/img/logoarriba.png" alt="Logo Improve it" style="width:100px;" />
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <router-link class="nav-link" to="/" exact>Inicio</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/deportista">Atletas</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/marcas">Marcas</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/eventos">Eventos</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/asesoramiento">Asesoramiento</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/starups">Startups</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/contacto">Contacto</router-link>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <router-view />
   </div>
 </template>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
+    .navbar {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      align-items: right;
+    }
+    .nav-link {
+      color: white;
+      text-align: center;
+    }
 </style>
