@@ -1,38 +1,39 @@
 <template>
 	<article>
 		
+				<div style="container-fluid ">
+						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
+						<a class="contenedorIconos" href="https://web.facebook.com/improveitsm/?ref=page_internal" target="_blank"> <img src="@/assets/img/f_contacto.png" class="iconosRedes color2" alt="icono Facebook"></a>
+						<a class="contenedorIconos" href="https://www.youtube.com/channel/UCv19StYUploQNnxwz2UYHjw" target="_blank"> <img src="@/assets/img/y_contacto.png" class="iconosRedes  color3" alt="icono youtube"></a>
+						<a class="contenedorIconos" href="https://instagram.com/improveitsm?igshid=a4mtov6e0ty" target="_blank"><img src="@/assets/img/i_contacto.png" class="iconosRedes color4" alt="icono instagram" ></a>
+						<a  class="contenedorIconos" href="https://www.linkedin.com/company/improve-it-sport-management/about/?viewAsMember=true" target="_blank"> <img src="@/assets/img/l_contacto.png" class="iconosRedes color5" alt="logo linkedin"></a>
+	        	</div>
         <div class="container contacto" >
-			<h1>CONTACTA CON NOSOTROS</h1>
-			<div class="row">
-				<div class="col-md-6">
+                <div class="row">
 
-					<div id="textoContacto">
-						<h4>ESCRIBE TU CONSULTA</h4>
+                <div class="col-md-3"></div>
+				<div class="col-md-6" style="text-align:center">
+			        <h1>CONTACTA CON NOSOTROS</h1>
+					<div class="formulario">
+						<h4 style="text-align:center">ESCRIBE TU CONSULTA</h4>
 							<input type="text" name="name" id="nombre" class="form-control mb-0" placeholder="Nombre" autocomplete="off"> 
                         	<div style="height:20px"><P class="mensajeError" v-if="errorNombre.length">{{errorNombre}}</P></div>
                         	<input type="email" name="correo" id="correo" class="form-control mt-1 mb-0" placeholder="Correo" autocomplete="off"> 
                         	<div style="height:20px"><P class="mensajeError" v-if="errorCorreo.length">{{errorCorreo}}</P></div>
                         	<input type="tel" name="telefono" id="telefono" class="form-control mt-1 mb-0" placeholder="Teléfono" autocomplete="off">
                         	<div style="height:20px"><P class="mensajeError" v-if="errorTelefono.length">{{errorTelefono}}</P></div>
-                        	<textarea name="mensaje" id="mensaje" class="form-control mt-1 mb-0" placeholder="Mensaje"></textarea> 
+                        	<textarea name="mensaje" id="mensaje" class="form-control mt-1 mb-0" rows="4" placeholder="Mensaje"></textarea> 
                         	<div style="height:20px"><P class="mensajeError" v-if="errorMensaje.length">{{errorMensaje}}</P></div>
                         	<button id="boton" class="boton" @click="enviar()">Enviar</button>
 					</div>
 				</div>
-
-				<div class="col-md-6 ">
-						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
-						<a class="contenedorIconos" href="https://web.facebook.com/improveitsm/?ref=page_internal" target="_blank"> <img src="@/assets/img/f_contacto.png" class="iconosRedes color2" alt="icono Facebook"></a>
-						<a class="contenedorIconos" href="https://www.youtube.com/channel/UCv19StYUploQNnxwz2UYHjw" target="_blank"> <img src="@/assets/img/y_contacto.png" class="iconosRedes  color3" alt="icono youtube"></a>
-						<a class="contenedorIconos" href="https://instagram.com/improveitsm?igshid=a4mtov6e0ty" target="_blank"><img src="@/assets/img/i_contacto.png" class="iconosRedes color4" alt="icono instagram" ></a>
-						<a  class="contenedorIconos" href="https://www.linkedin.com/company/improve-it-sport-management/about/?viewAsMember=true" target="_blank"> <img src="@/assets/img/l_contacto.png" class="iconosRedes color5" alt="logo linkedin"></a>
+                <div class="col-md-3"></div>
+                </div>
 
 
-			</div>
 
 		</div>
 			
-		</div>
 		<p_footer/>
 	</article>
 </template> 
@@ -145,10 +146,11 @@ data(){
 <style scoped>
 	article {
 		background-color: #000;
+        margin-top: 120px
 	}
 	.contacto {
-		margin-top: 100px;
-		padding: 60px 20px;
+		margin-top: 10px;
+		padding: 30px 20px;
 		color: #fff;		
 	}
 	h1 {
@@ -161,7 +163,7 @@ data(){
 
 
 	#boton{
-    width: 50%;
+    width: 200px;
     border: none;
     color: white;
     background: transparent;
@@ -172,6 +174,7 @@ data(){
     cursor: pointer;
     text-decoration: none;
     text-transform: uppercase;
+    text-align: center;
 }
 
    #boton:hover{
@@ -182,17 +185,21 @@ data(){
 
 
 
-   .textoContacto * {
+   .formulario * {
     line-height: 1.5em;
     text-align: justify;
+    align-content: center;
 }
 
-.textoContacto {
+.formulario {
 	padding: 2em;
+  
+    
 }
 
-.textoContacto h4 {
+.formulario h4 {
     color: #68B5E3;
+    text-align:left;
 }
 
 .mensajeError {
@@ -204,8 +211,10 @@ data(){
 
 
 .iconosRedes {
-	width: 143px;
-	height: 13;		
+	width: 80px;
+	height: 13;	
+    opacity: .8;	
+    margin-top: 50px 
 }
 
 .iconosRedes:Hover {
@@ -227,5 +236,19 @@ data(){
 .color5{
 	background-color: rgba(247,247,247,.8);
 }
+
+@media (max-width: 767px) { 
+       .formulario  {
+		padding: 1em ;
+
+	}
+    .iconosRedes {
+	width: 60px;
+	
+}
+        }
+
+
+
 </style>
 

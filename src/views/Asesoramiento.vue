@@ -1,7 +1,7 @@
 <template>
     <article>
         
-        <div class="container-fluid" style="padding: 0; margin-top: 100px">
+        <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
                 <h1>Asesoramiento a clubes, federaciones y organizaciones deportivas</h1>
             </div>

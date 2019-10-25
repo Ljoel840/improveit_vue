@@ -1,21 +1,17 @@
 <template>
   <article>
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-md-4 text-center">
-					<img src="@/assets/img/f_nosotros2.jpg" alt="fondo Atletas">
-				</div>
-				<div class="col-md-6 pt-4">
+		<div class="container-fluid p-0">
+				<div class="col-md-12 p-0 texto">
 					<h4>MISIÓN</h4>
-					<P>Brindar a nuestros clientes soluciones integrales logrando la interacción perfecta entre negocios y deporte. Para ello definimos 3 metas fundamentales:</P>
-					<ul>
+					<P >Brindar a nuestros clientes soluciones integrales logrando la interacción perfecta entre negocios y deporte. Para ello definimos 3 metas fundamentales:</P>
+					<ul >
 						<li>Aportar valor a nuestros deportistas, cuidando su integridad y respetando su forma de ver el mundo.</li>
 						<li>Generar utilidades excepcionales para nuestros clientes por intermedio de acciones innovadoras.</li>
 						<li>Promover una industria deportiva confiable, creando un clima de negocios adecuado y transparente</li>
 					</ul>
 					<h4>VALORES</h4>
-					<P>Somos responsables por nuestras acciones, que se rigen por los siguientes principios:</P>
-					<ul>
+					<P >Somos responsables por nuestras acciones, que se rigen por los siguientes principios:</P>
+					<ul >
 						<li>Compromiso: sentir amor por el deporte, para hacer nuestro trabajo de una manera genuina y con alegría.</li>
 						<li>Calidad: trabajar en búsqueda de la excelencia, dando a nuestros clientes lo que no se imaginaban que habían querido.</li>
 						<li>Deportividad: comportarse con ética y respeto frente a la sociedad en su conjunto.</li>
@@ -24,16 +20,12 @@
 						<li>Responsabilidad: rendir cuentas sobre nuestras acciones y asociarnos con marcas que compartan nuestra forma de ver el mundo.</li>
 					</ul>
 					<h4>VISIÓN</h4>
-					<P>Nuestra visión es la guía que enmarca nuestra forma de ver el mundo y nos permite orientar esfuerzos hacia objetivos concretos:</P>
-					<ul>
+					<P >Nuestra visión es la guía que enmarca nuestra forma de ver el mundo y nos permite orientar esfuerzos hacia objetivos concretos:</P>
+					<ul >
 						<li>Ser una empresa inclusiva, con las mejores oportunidades de capacitación y crecimiento de la industria para quienes trabajan con nosotros.</li>
 						<li>Convertirnos en un agente de cambio, acercando a deportistas y organizaciones tras el objetivo común de una industria deportiva próspera, dinámica y transparente.</li>
 					</ul>
 				</div>
-				<div class="col-md-2">
-					
-				</div>
-			</div>
 		</div>
 		<p_footer/>
   </article>
@@ -57,18 +49,44 @@ export default {
 	article {
 		color: #fff;
 		margin-top: 150px;
-		background-color: #000;
+		
 	}
 	* {
 		text-align: justify;
+		
 	}
 
 	h4 {
-		color: #68B5E3;
+		
+		background-color: rgba(0, 0, 0, 0.5);
+		border-top: solid 5px  #68B5E3;
+		border-bottom: solid 5px  #68B5E3;
+		padding: 10px 0;
+		padding-left: 20%;
 	}
+	p, ul  {
+		padding: 0 20%;
+
+	}
+	p {
+		margin-top: 3em
+	}
+	ul {
+		margin-bottom: 3em
+	}
+	
 
 	img {
 		width: 80%;
 		text-align: center;
 	}
+
+@media (max-width: 767px) { 
+        p, ul  {
+		padding: 0 5%;
+
+	}
+        }
+
+	
 </style>

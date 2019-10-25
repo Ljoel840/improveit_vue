@@ -7,7 +7,7 @@
                 <div class="serviciosImagenes">
                     <a href="#">
                         <img src="@/assets/img/imagen1.jpg" alt="Opcion Deportista" class="opciones">
-                        <h1 class="textoImagenes">Representación de Deportistas </h1>
+                        <h1 class="textoImagenes">Representación y asesoramiento de deportistas de alto rendimiento</h1>
                     </a>
                 </div>
                 <div class="css-shapes-preview3"></div>
@@ -16,7 +16,7 @@
                 <div class="serviciosImagenes">
                     <a href="#">
                         <img src="@/assets/img/imagen2.jpg" alt="Opcion Marcas" class="opciones">
-                        <h1 class="textoImagenes2">Marcas y Empresas</h1>
+                        <h1 class="textoImagenes2">Campañas empresariales y activación de marcas</h1>
                     </a>
                 </div>
                 <div class="css-shapes-preview"></div>
@@ -24,7 +24,7 @@
                 <div class="serviciosImagenes">
                     <a href="#">
                         <img src="@/assets/img/imagen3.jpg" alt="Opcion Eventos" class="opciones">
-                        <h1 class="textoImagenes">Gestión de Eventos Deportivos </h1>
+                        <h1 class="textoImagenes">Gestión de eventos deportivos y actividades relacionadas al deporte</h1>
                     </a>
                 </div>
                 <div class="css-shapes-preview3"></div>
@@ -32,7 +32,7 @@
                 <div class="serviciosImagenes">
                     <a href="#">
                         <img src="@/assets/img/imagen4.jpg" alt="Opcion Ventas" class="opciones">
-                        <h1 class="textoImagenes2">Asesoramiento a Organizaciones Deportivas</h1>
+                        <h1 class="textoImagenes2">Asesoramiento a Clubes, Federaciones y Organizaciones Deportivas</h1>
                     </a>
                 </div>
                 <div class="css-shapes-preview"></div>
@@ -65,7 +65,7 @@ export default {
   }
 
 .servicios {
-	margin-top: 8em;
+	margin-top: 12em;
 }
 .serviciosImagenes {
       position: relative; 
@@ -151,7 +151,7 @@ export default {
     position: absolute;
     margin-top: -30vw;
     color: #fff;
-    font-size: 3.5vw;
+    font-size: 3vw;
     z-index: 8;     
     right: 5vw;
     padding-left: 50%;
@@ -162,7 +162,7 @@ export default {
     position: absolute;
     margin-top: -30vw;
     color: #fff;
-    font-size: 3.5vw;
+    font-size: 3vw;
     z-index: 8;     
     left: 5vw;
     padding-right: 50%;

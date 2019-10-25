@@ -95,7 +95,7 @@ export default {
     .contenido {
         /* height:350px; */
 		width: 90%;
-        max-height:600px;
+        /* max-height:600px; */
         text-align: center;
         overflow-y: auto;
 		position: relative;

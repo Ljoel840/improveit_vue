@@ -14,7 +14,7 @@
       </button>
 
       <a class="navbar-brand" href="/">
-        <img src="@/assets/img/logoarriba.png" alt="Logo Improve it" style="width:100px;" />
+        <img src="@/assets/img/logoarriba.png" alt="Logo Improve it" style="width:150px; height:auto" />
       </a>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
