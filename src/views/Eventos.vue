@@ -3,18 +3,18 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 100px">
             <div class="tope" >
-                <h1>Representación y asesoramiento de deportistas de alto rendimiento</h1>
+                <h1>Gestión de eventos deportivos y actividades relacionadas al deporte</h1>
             </div>
         </div>
         
         
         <div class="textoDescripcion">
-            <h3>Trabajamos con nuestros atletas en la creación de marcas personales y generación de ingresos a través de asociaciones comerciales. Damos el soporte necesario para que, sin importar el nivel inicial de su carrera, todos nuestros deportistas puedan llegar al máximo de su potencial.</h3>
+            <h3>Contamos con vasta experiencia en organización de eventos deportivos de primer nivel, así como de actividades asociadas, como ser cursos, talleres o seminarios. Desde producciones nacionales hasta internacionales, entendemos los requisitos y las necesidades de cada deporte y conocemos las reglamentaciones y condiciones de cada parte involucrada.</h3>
 
         </div>
 
         
-        <cargarDeportistas></cargarDeportistas>
+        <cargarDatos pag='/eventos'></cargarDatos>
 
         <br>
         <p_footer/>
@@ -23,25 +23,21 @@
     </article>
 </template>
 <script>
-import cargarDeportistas from '@/components/cargarDeportistas.vue';
+import cargarDatos from '@/components/cargarDatos.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
 
 export default {
-    name: 'deportistas',
+    name: 'eventos',
     components: {
     p_footer,
-    cargarDeportistas
+    cargarDatos
     },
     data: () => ({
         campos: [],
         error: null,
     }),
-    created () {
-    window.scrollTo(0,0);
-
-    },
 }
 </script>
 <style scoped>
@@ -63,7 +59,7 @@ export default {
     }
 
     .tope {
-        background-image: url("../assets/img/imagen1.jpg");
+        background-image: url("../assets/img/imagen3.jpg");
         background-position: left;
         background-color: #000;
     }

@@ -148,23 +148,28 @@ export default {
     z-index: 10;
 }
  .textoImagenes {
-      position: absolute;
-      margin-top: -30vw;
-      color: #fff;
-      font-size: 3.5vw;
-      z-index: 8;     
-	 right: 5vw;
+    position: absolute;
+    margin-top: -30vw;
+    color: #fff;
+    font-size: 3.5vw;
+    z-index: 8;     
+    right: 5vw;
+    padding-left: 50%;
 
   }
  
  .textoImagenes2 {
-      position: absolute;
-      margin-top: -30vw;
-      color: #fff;
-      font-size: 3.5vw;
-      z-index: 8;     
+    position: absolute;
+    margin-top: -30vw;
+    color: #fff;
+    font-size: 3.5vw;
+    z-index: 8;     
     left: 5vw;
+    padding-right: 50%;
 
+  }
+  img:hover {
+      opacity: 0.5;
   }
 
 </style>

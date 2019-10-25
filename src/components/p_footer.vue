@@ -2,8 +2,8 @@
 	<footer>
         <div class="container-fluid " style="padding: 20px 10px; width: 100%">
 			<div class="row no-gutters">
-				<div class="col-lg-3 col-md-6 columna" style="padding: 0 3em">
-					<img src="@/assets/img/logoabajo.png" class="logoAbajo">
+				<div class="col-lg-3 col-md-6 datosEmpresa">
+					<img src="@/assets/img/logoabajo.png" class="logoAbajo" alt="Logo Improveit">
 					<p>Seguinos por nuestras redes sociales</p>
 					<span >
 						<a href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_deportista.png" class="iconosFooter" alt="icono twitter"></a>
@@ -23,8 +23,8 @@
 					</div>
 					<div class="row">
 						<div class="col-sm-12" >
-							<a href="https://www.delfasoft.com/" target="_blank"><img src="@/assets/img/logodelfasoft2.png" style=" padding-top: 30px; width: 80%" ></a> <br>
-							<a href="https://www.delfasport.com/" target="_blank"><img src="@/assets/img/logo_white.png" style=" padding-top: 30px; width: 90%" ></a>
+							<a href="https://www.delfasoft.com/" target="_blank"><img src="@/assets/img/logodelfasoft2.png" style=" padding-top: 30px; width: 80%" alt="logo Delfasoft" ></a> <br>
+							<a href="https://www.delfasport.com/" target="_blank"><img src="@/assets/img/logo_white.png" style=" padding-top: 30px; width: 90%" alt="logo Delfasport" ></a>
 
 						</div>
 
@@ -40,9 +40,11 @@
 					</div>
 					<div class="row width: 100% no-gutters">
 						<div class="col-md-12" >
-							<a href="https://www.linkedin.com/in/daniel-macri-larrañaga-00754723/" target="_blank"><img src="@/assets/img/logodoctordaniel.png" style=" padding-top: 40px; width: 100%" ></a>
-							<a><img src="@/assets/img/logolionel.png" style=" padding-top: 40px; width: 75%" ></a>
-							<a href="http://fca.com.uy/" target="_blank"><img src="@/assets/img/logoFCA.png" style="padding-top: 20px; width: 60%" ></a>
+							<a href="https://www.linkedin.com/in/daniel-macri-larrañaga-00754723/" target="_blank"><img src="@/assets/img/logodoctordaniel.png" style=" padding-top: 30px; width: 100%" alt="Logo Daniel Macri" ></a>
+							<a><img src="@/assets/img/logolionel.png" style=" padding-top: 30px; width: 75%" alt="logo Lionel de Mello"></a>
+							<a href="http://fca.com.uy/" target="_blank"><img src="@/assets/img/logoFCA.png" style="padding-top: 20px; width: 60%" alt="logo FCA" ></a>
+							<a href="https://www.mevuelo.com/" target="_blank"><img src="@/assets/img/l_mevuelo.png" style="padding-top: 20px; width: 60%" alt="logo Mevuelo"></a>
+
 						</div>
 						
 					</div>
@@ -60,7 +62,7 @@
 													
 						<div class="col-md-12">
 							<a href="https://www.instagram.com/ma_fotografiadeportiva/" target="_blank"><img src="@/assets/img/mathias.png" alt="Mathias Acosta" style="padding-top: 20px; width: 80%"></a>
-							<a href="https://www.instagram.com/nachosuarezph_/" target="_blank"><img src="@/assets/img/nacho.png" alt="Mathias Acosta" style="padding-top: 20px; width: 80%"></a>
+							<a href="https://www.instagram.com/nachosuarezph_/" target="_blank"><img src="@/assets/img/nacho.png" alt="NAcho Suarez" style="padding-top: 20px; width: 80%"></a>
 						</div>
 						
 					</div>
@@ -84,11 +86,15 @@ export default {
 		background-color: #191A1E;
 		color: white;
         text-align: center;
+		position: absolute ;
 	}
 
 	h4 {
 		font-size: 1.2em;
 	}
+
+	
+
 
 	.footerlogos {
         color: white;
@@ -145,6 +151,11 @@ export default {
 	.columna {
 		padding: 5em 6.5vw; width: 100%; 
 	}
+
+	.datosEmpresa{
+		padding: 0 3em
+
+	}
 		
 	@media only screen and (max-width: 990px) {
 		.columna {
@@ -154,6 +165,12 @@ export default {
 	@media only screen and (max-width: 768px) {
 		.columna {
 		padding: 2em 25vw; width: 100%; }
+
+		.datosEmpresa{
+		padding: 0 1em
+
+	}
+		
 	}
 
 

@@ -3,18 +3,18 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 100px">
             <div class="tope" >
-                <h1>Representación y asesoramiento de deportistas de alto rendimiento</h1>
+                <h1>Campañas empresariales y activación de marcas</h1>
             </div>
         </div>
         
         
         <div class="textoDescripcion">
-            <h3>Trabajamos con nuestros atletas en la creación de marcas personales y generación de ingresos a través de asociaciones comerciales. Damos el soporte necesario para que, sin importar el nivel inicial de su carrera, todos nuestros deportistas puedan llegar al máximo de su potencial.</h3>
+            <h3>Identificamos la conexión perfecta entre marcas y deportistas, aprovechando ideas creativas y atributos únicos para contar historias. Trabajamos con las empresas para aprovechar al máximo sus inversiones en patrocinio y marketing deportivo</h3>
 
         </div>
 
         
-        <cargarDeportistas></cargarDeportistas>
+        <cargarDatos pag='/puntajes'></cargarDatos>
 
         <br>
         <p_footer/>
@@ -23,7 +23,7 @@
     </article>
 </template>
 <script>
-import cargarDeportistas from '@/components/cargarDeportistas.vue';
+import cargarDatos from '@/components/cargarDatos.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
@@ -32,16 +32,12 @@ export default {
     name: 'deportistas',
     components: {
     p_footer,
-    cargarDeportistas
+    cargarDatos
     },
     data: () => ({
         campos: [],
         error: null,
     }),
-    created () {
-    window.scrollTo(0,0);
-
-    },
 }
 </script>
 <style scoped>
@@ -63,8 +59,8 @@ export default {
     }
 
     .tope {
-        background-image: url("../assets/img/imagen1.jpg");
-        background-position: left;
+        background-image: url("../assets/img/imagen2.jpg");
+        background-position: right;
         background-color: #000;
     }
 

@@ -3,18 +3,18 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 100px">
             <div class="tope" >
-                <h1>Representación y asesoramiento de deportistas de alto rendimiento</h1>
+                <h1>Startups de emprendimientos deportivos</h1>
             </div>
         </div>
         
         
         <div class="textoDescripcion">
-            <h3>Trabajamos con nuestros atletas en la creación de marcas personales y generación de ingresos a través de asociaciones comerciales. Damos el soporte necesario para que, sin importar el nivel inicial de su carrera, todos nuestros deportistas puedan llegar al máximo de su potencial.</h3>
+            <h3>Damos todo el soporte necesario para que no se cometan errores a la hora de iniciar un emprendimiento deportivo. Participamos de la proyección del negocio, estudios de mercado e identificación de la locación. Colaboramos con la contratación y capacitación de personal, compra de materiales e identificación de los mejores proveedores. Realizamos la campaña de lanzamiento y acompañamos al emprendimiento hasta que sea necesario, analizando desviaciones y generando manuales de procedimientos</h3>
 
         </div>
 
         
-        <cargarDeportistas></cargarDeportistas>
+        <cargarDatos pag='/startups'></cargarDatos>
 
         <br>
         <p_footer/>
@@ -23,25 +23,20 @@
     </article>
 </template>
 <script>
-import cargarDeportistas from '@/components/cargarDeportistas.vue';
+import cargarDatos from '@/components/cargarDatos.vue';
 import p_footer from '@/components/p_footer.vue';
-import extraer from './extraer'
 
 
 export default {
-    name: 'deportistas',
+    name: 'startups',
     components: {
     p_footer,
-    cargarDeportistas
+    cargarDatos
     },
     data: () => ({
         campos: [],
         error: null,
     }),
-    created () {
-    window.scrollTo(0,0);
-
-    },
 }
 </script>
 <style scoped>
@@ -63,7 +58,7 @@ export default {
     }
 
     .tope {
-        background-image: url("../assets/img/imagen1.jpg");
+        background-image: url("../assets/img/imagen5.jpg");
         background-position: left;
         background-color: #000;
     }

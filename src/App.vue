@@ -13,32 +13,35 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand" href="/">
         <img src="@/assets/img/logoarriba.png" alt="Logo Improve it" style="width:100px;" />
       </a>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <router-link class="nav-link" to="/" exact>Inicio</router-link>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/">Inicio</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/deportista">Atletas</router-link>
+            <router-link class="nav-link" to="/deportistas" active-class="active">Atletas</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/marcas">Marcas</router-link>
+            <router-link class="nav-link" to="/marcas" active-class="active">Marcas</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/eventos">Eventos</router-link>
+            <router-link class="nav-link" to="/eventos" active-class="active">Eventos</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/asesoramiento">Asesoramiento</router-link>
+            <router-link class="nav-link" to="/asesoramiento" active-class="active">Asesoramiento</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/starups">Startups</router-link>
+            <router-link class="nav-link" to="/startups" active-class="active">Startups</router-link>
           </li>
           <li class="nav-item">
-            <router-link class="nav-link" to="/contacto">Contacto</router-link>
+            <router-link class="nav-link" to="/nosotros" active-class="active">Nosotros</router-link>
+          </li>
+          <li class="nav-item">
+            <router-link class="nav-link" to="/contacto" active-class="active">Contacto</router-link>
           </li>
         </ul>
       </div>
@@ -57,5 +60,13 @@
     .nav-link {
       color: white;
       text-align: center;
+
     }
+    .router-link-active{
+      font-weight: bold; 
+      color: #fff;
+        
+    }
+    
+
 </style>
