@@ -25,6 +25,7 @@
 						<li>Ser una empresa inclusiva, con las mejores oportunidades de capacitación y crecimiento de la industria para quienes trabajan con nosotros.</li>
 						<li>Convertirnos en un agente de cambio, acercando a deportistas y organizaciones tras el objetivo común de una industria deportiva próspera, dinámica y transparente.</li>
 					</ul>
+					<br>
 				</div>
 		</div>
 		<p_footer/>
@@ -49,8 +50,17 @@ export default {
 	article {
 		color: #fff;
 		margin-top: 150px;
+		background-image: url("../assets/img/logogrande.png");
+		background-size: cover;
+		padding-bottom: 50px;
+
+
 		
 	}
+	.texto{
+		background-color: rgba(0, 0, 0, 0.8);
+	} 
+
 	* {
 		text-align: justify;
 		
@@ -58,7 +68,7 @@ export default {
 
 	h4 {
 		
-		background-color: rgba(0, 0, 0, 0.5);
+		background-color: rgba(0, 0, 0, 0.9);
 		border-top: solid 5px  #68B5E3;
 		border-bottom: solid 5px  #68B5E3;
 		padding: 10px 0;
@@ -66,6 +76,7 @@ export default {
 	}
 	p, ul  {
 		padding: 0 20%;
+		
 
 	}
 	p {
@@ -75,6 +86,9 @@ export default {
 		margin-bottom: 3em
 	}
 	
+	ul li {
+		list-style-position: inside;
+	}
 
 	img {
 		width: 80%;

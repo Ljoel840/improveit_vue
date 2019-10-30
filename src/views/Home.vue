@@ -1,13 +1,12 @@
 <template>
   <article>
-
      <carousel/> 
      <section class="informacion container-fluid">
                   <h3><strong>Improve-It Sports Management </strong>es una agencia de representación y asesoramiento enfocada en potenciar a los mejores talentos y actores del deporte. Entregamos resultados, no promesas; utilizando estrategias sólidas e innovadoras que mantienen a nuestros clientes a la vanguardia del mercado.  </h3> 
                   <h3> En base a nuestra experiencia hemos elaborado un nuevo estilo de representación individualizado y de alto impacto. Las personas que trabajan para nuestra empresa han sido seleccionadas por su dedicación, creatividad y pasión por el deporte.
                   </h3>
       </section>
-      <servicios/>
+      <servicios v-if="ultimo"/>
       <p_footer/>
   </article>
 </template>
@@ -26,10 +25,18 @@ export default {
     p_footer,
   },
   data: () => ({
+    ultimo: false
     }),
   created () {
     window.scrollTo(0,0);
 
+    },
+
+    mounted () {
+        // El footer tiene un pequeño retraso para no pegar en pantalla
+        setTimeout(() => {
+            this.ultimo = true
+        }, 2000);
     },
 }
 </script>
@@ -45,14 +52,15 @@ export default {
     }
 
     .informacion h3 {
-      font-size: 1.8em;
+      font-size: 1.5em;
       padding: .5em 3em;
       text-align: center;
       font-family: sans-serif;
+	  line-height: 1.5em
     }
     strong {
       font-weight: bolder;
-      font-size: 1.3em;
+     
     }
     
     .logo {
@@ -70,4 +78,5 @@ export default {
 
     }
 
+ 
 </style>

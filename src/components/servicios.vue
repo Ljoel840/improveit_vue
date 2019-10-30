@@ -5,43 +5,43 @@
                 <div class="css-shapes-preview"></div>
                 <div class="css-shapes-preview2"></div>
                 <div class="serviciosImagenes">
-                    <a href="#">
+					<router-link  to="/deportistas" active-class="active">
                         <img src="@/assets/img/imagen1.jpg" alt="Opcion Deportista" class="opciones">
-                        <h1 class="textoImagenes">Representación y asesoramiento de deportistas de alto rendimiento</h1>
-                    </a>
+                        <h1 class="textoImagenes">Representación y Asesoramiento de Deportistas de Alto Rendimiento</h1>
+					</router-link>
                 </div>
                 <div class="css-shapes-preview3"></div>
                 <div class="css-shapes-preview4"></div>
             
                 <div class="serviciosImagenes">
-                    <a href="#">
+		            <router-link  to="/marcas" active-class="active">
                         <img src="@/assets/img/imagen2.jpg" alt="Opcion Marcas" class="opciones">
-                        <h1 class="textoImagenes2">Campañas empresariales y activación de marcas</h1>
-                    </a>
+                        <h1 class="textoImagenes2">Campañas Empresariales y Activación de Marcas</h1>
+					</router-link>
                 </div>
                 <div class="css-shapes-preview"></div>
                 <div class="css-shapes-preview5"></div>
                 <div class="serviciosImagenes">
-                    <a href="#">
+		            <router-link  to="/eventos" active-class="active">
                         <img src="@/assets/img/imagen3.jpg" alt="Opcion Eventos" class="opciones">
-                        <h1 class="textoImagenes">Gestión de eventos deportivos y actividades relacionadas al deporte</h1>
-                    </a>
+                        <h1 class="textoImagenes">Gestión de Eventos Deportivos y Actividades Relacionadas al Deporte</h1>
+					</router-link>
                 </div>
                 <div class="css-shapes-preview3"></div>
                 <div class="css-shapes-preview6"></div>
                 <div class="serviciosImagenes">
-                    <a href="#">
+		            <router-link  to="/asesoramiento" active-class="active">
                         <img src="@/assets/img/imagen4.jpg" alt="Opcion Ventas" class="opciones">
                         <h1 class="textoImagenes2">Asesoramiento a Clubes, Federaciones y Organizaciones Deportivas</h1>
-                    </a>
+					</router-link>
                 </div>
                 <div class="css-shapes-preview"></div>
                 <div class="css-shapes-preview2"></div>
                 <div class="serviciosImagenes">
-                    <a href="#">
+		            <router-link  to="/startup" active-class="active">
                         <img src="@/assets/img/imagen5.jpg" alt="Opcion Deportista" class="opciones">
                         <h1 class="textoImagenes">Startups de Emprendimientos Deportivos</h1>
-                    </a>
+					</router-link>
                 </div>
             </div> 
         </div>

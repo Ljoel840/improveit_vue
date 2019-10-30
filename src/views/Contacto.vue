@@ -1,33 +1,53 @@
 <template>
 	<article>
 		
-				<div style="container-fluid ">
-						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
-						<a class="contenedorIconos" href="https://web.facebook.com/improveitsm/?ref=page_internal" target="_blank"> <img src="@/assets/img/f_contacto.png" class="iconosRedes color2" alt="icono Facebook"></a>
-						<a class="contenedorIconos" href="https://www.youtube.com/channel/UCv19StYUploQNnxwz2UYHjw" target="_blank"> <img src="@/assets/img/y_contacto.png" class="iconosRedes  color3" alt="icono youtube"></a>
-						<a class="contenedorIconos" href="https://instagram.com/improveitsm?igshid=a4mtov6e0ty" target="_blank"><img src="@/assets/img/i_contacto.png" class="iconosRedes color4" alt="icono instagram" ></a>
-						<a  class="contenedorIconos" href="https://www.linkedin.com/company/improve-it-sport-management/about/?viewAsMember=true" target="_blank"> <img src="@/assets/img/l_contacto.png" class="iconosRedes color5" alt="logo linkedin"></a>
-	        	</div>
-        <div class="container contacto" >
+        <div class="container-fluid contacto" >
                 <div class="row">
 
-                <div class="col-md-3"></div>
-				<div class="col-md-6" style="text-align:center">
+                <div class="col-lg-3 col-md-2 col-sm-1 col-12" ></div>
+				<div class="col-lg-6 col-md-8 col-sm-10 col-12" style="text-align:center">
 			        <h1>CONTACTA CON NOSOTROS</h1>
 					<div class="formulario">
 						<h4 style="text-align:center">ESCRIBE TU CONSULTA</h4>
 							<input type="text" name="name" id="nombre" class="form-control mb-0" placeholder="Nombre" autocomplete="off"> 
-                        	<div style="height:20px"><P class="mensajeError" v-if="errorNombre.length">{{errorNombre}}</P></div>
+                        	<div style="height:30px"><P class="mensajeError" v-if="errorNombre.length">{{errorNombre}}</P></div>
                         	<input type="email" name="correo" id="correo" class="form-control mt-1 mb-0" placeholder="Correo" autocomplete="off"> 
-                        	<div style="height:20px"><P class="mensajeError" v-if="errorCorreo.length">{{errorCorreo}}</P></div>
+                        	<div style="height:30px"><P class="mensajeError" v-if="errorCorreo.length">{{errorCorreo}}</P></div>
                         	<input type="tel" name="telefono" id="telefono" class="form-control mt-1 mb-0" placeholder="Teléfono" autocomplete="off">
-                        	<div style="height:20px"><P class="mensajeError" v-if="errorTelefono.length">{{errorTelefono}}</P></div>
+                        	<div style="height:30px"><P class="mensajeError" v-if="errorTelefono.length">{{errorTelefono}}</P></div>
                         	<textarea name="mensaje" id="mensaje" class="form-control mt-1 mb-0" rows="4" placeholder="Mensaje"></textarea> 
-                        	<div style="height:20px"><P class="mensajeError" v-if="errorMensaje.length">{{errorMensaje}}</P></div>
+                        	<div style="height:30px"><P class="mensajeError" v-if="errorMensaje.length">{{errorMensaje}}</P></div>
                         	<button id="boton" class="boton" @click="enviar()">Enviar</button>
 					</div>
 				</div>
-                <div class="col-md-3"></div>
+                <div class="col-lg-3 col-md-2 col-sm-1 col-12" style=" margin-top: 10%; text-align:right">
+					<div class="row">
+						<div class="col-md-12">
+						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<a class="contenedorIconos" href="https://web.facebook.com/improveitsm/?ref=page_internal" target="_blank"> <img src="@/assets/img/f_contacto.png" class="iconosRedes color2" alt="icono Facebook"></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-12">
+						<a class="contenedorIconos" href="https://www.youtube.com/channel/UCv19StYUploQNnxwz2UYHjw" target="_blank"> <img src="@/assets/img/y_contacto.png" class="iconosRedes  color3" alt="icono youtube"></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<a class="contenedorIconos" href="https://instagram.com/improveitsm?igshid=a4mtov6e0ty" target="_blank"><img src="@/assets/img/i_contacto.png" class="iconosRedes color4" alt="icono instagram" ></a>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+						<a  class="contenedorIconos" href="https://www.linkedin.com/company/improve-it-sport-management/about/?viewAsMember=true" target="_blank"> <img src="@/assets/img/l_contacto.png" class="iconosRedes color5" alt="logo linkedin"></a>
+						</div>
+					</div>
+
+				</div>
                 </div>
 
 
@@ -154,7 +174,8 @@ data(){
 		color: #fff;		
 	}
 	h1 {
-		padding: 30px 0
+		padding: 30px 0;
+		font-size: 2em;
 	}
 
 	h4 {
@@ -213,8 +234,9 @@ data(){
 .iconosRedes {
 	width: 80px;
 	height: 13;	
-    opacity: .8;	
-    margin-top: 50px 
+    opacity: .8;
+	
+
 }
 
 .iconosRedes:Hover {

@@ -22,7 +22,9 @@
 
 			<img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa">
 			<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2">
-			<video v-if="datos.video.activo" width="90%" controls><source :src="datos.video.url" type="video/mp4">
+			<video v-if="datos.video.activo" width="100%" controls><source :src="datos.video.url" type="video/mp4">
+      Your browser does not support HTML5 video.</video>
+      <video v-if="datos.video.poster" width="100%" controls><source :src="datos.video.poster" type="video/mp4">
       Your browser does not support HTML5 video.</video>
 			
 
@@ -76,7 +78,7 @@ export default {
 
 <style scope>
 article {
-  margin-top: 100px;
+  margin-top: 130px;
   border-radius: 12px;
   margin-bottom: 10px;
   color: #fff;
@@ -94,7 +96,7 @@ article {
   width: 0;
   position: absolute;
   z-index: 1;
-  top: 100px;
+  top: 150px;
   left: 0;
   background-color: #111;
   overflow-x: hidden;
@@ -199,8 +201,9 @@ article {
 
 }
   
-
-
+img {
+  padding: 10px 0
+}
 
 .tituloNombre {
   color: #fff;
@@ -236,6 +239,22 @@ article {
     background-color: #9A175B;
     /* cursor: default; */
 
+}
+
+
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    /* border-radius: 10px; */
+    background-color: rgb(121, 120, 120);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #191A1E;
+    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
 }
 </style>
 

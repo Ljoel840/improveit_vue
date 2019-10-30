@@ -31,12 +31,29 @@
           <li class="nav-item">
             <router-link class="nav-link" to="/eventos" active-class="active">Eventos</router-link>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <router-link class="nav-link" to="/asesoramiento" active-class="active">Asesoramiento</router-link>
+          </li> -->
+
+          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Asesoramiento
+              </a>
+              
+              <ul class="dropdown-menu dropdown-menu-right prueba" aria-labelledby="navbarDropdownMenuLink">
+                <!-- <li><a class="dropdown-item" href="#">Asesoramiento a organizaciones deportivas</a></li> -->
+                <!-- <li><a class="dropdown-item" href="#">Startups de emprendimientos deportivos</a></li> -->
+                 <li>
+                  <router-link class="dropdown-item" to="/asesoramiento" active-class="active">Asesoramiento a organizaciones deportivas</router-link>
+                </li>
+                <li>
+                  <router-link class="dropdown-item" to="/startups" active-class="active">Startups de emprendimientos deportivos</router-link>
+                </li>
+                 
+              </ul>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/startups" active-class="active">Startups</router-link>
-          </li>
+
+
           <li class="nav-item">
             <router-link class="nav-link" to="/nosotros" active-class="active">Nosotros</router-link>
           </li>
@@ -67,6 +84,66 @@
       color: #fff;
         
     }
-    
+
+
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+  background-color: rgba(0, 0, 0, 0.8) !important;
+}
+.dropdown-submenu {
+    position:relative;
+}
+.dropdown-submenu>.dropdown-menu {
+    top:0;
+    left:100%;
+    margin-top:-6px;
+
+}
+
+/* rotate caret on hover */
+.dropdown-menu > li > a:hover:after {
+    text-decoration: underline;
+    transform: rotate(-90deg);
+} 
+
+.nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+   background-color: rgba(104,181,227,.8);
+}
+.nav > li > a:focus, .nav > li > a:hover {
+   background-color:rgba(104,181,227,.8);
+}
+
+
+.dropdown-item {
+  color: rgb(150, 150, 150) !important;
+}
+
+.active {
+  color: white !important;
+
+}
+
+
+/* .dropdown-menu {
+  width: 300px
+} */
+
+
+::-webkit-scrollbar{
+    width: 12px;
+    background-color: #F5F5F5;
+}
+::-webkit-scrollbar-track{
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
+    /* border-radius: 10px; */
+    background-color: rgb(121, 120, 120);
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background-color: #191A1E;
+    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
+}
+
 
 </style>

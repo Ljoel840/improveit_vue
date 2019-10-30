@@ -3,7 +3,7 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Startups de emprendimientos deportivos</h1>
+                <h1>Startups de Emprendimientos Deportivos</h1>
             </div>
         </div>
         
@@ -36,7 +36,12 @@ export default {
     data: () => ({
         campos: [],
         error: null,
-    }),
+	}),
+	created () {
+    window.scrollTo(0,0);
+
+    },
+
 }
 </script>
 <style scoped>
@@ -72,7 +77,7 @@ export default {
         color: white;
         text-align: center;
         padding: 2em;
-        font-size: 2em;
+        font-size: 1.5em;
         
     }
 

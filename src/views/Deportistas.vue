@@ -3,7 +3,7 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Representación y asesoramiento de deportistas de alto rendimiento</h1>
+                <h1>Representación y Asesoramiento de Deportistas de Alto Rendimiento</h1>
             </div>
         </div>
         
@@ -77,7 +77,7 @@ export default {
         color: white;
         text-align: center;
         padding: 2em;
-        font-size: 2em;
+        font-size: 1.5em;
         
     }
 

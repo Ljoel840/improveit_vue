@@ -110,7 +110,8 @@ export default {
 	.logoAbajo {
 		width: 90%; 
 		padding: 0; 
-		margin-bottom: 20px
+		margin-bottom: 20px;
+		max-width: 350px
 
 	}
 	.pie {
