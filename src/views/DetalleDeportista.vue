@@ -8,61 +8,77 @@
         <img class="profile" :src="atleta.imagen.url" alt="Profile" />
           <h4 style="margin: 0 5px 0 0">{{atleta.titulo}}</h4>
           <p class="text-center">{{atleta.boton.texto}}</p>
-        <p>
-			{{atleta.parrafos[0].texto}}
-        </p>
+		  	<div v-for="parraf in atleta.parrafos" :key="parraf.id">
+				<p >{{parraf.texto}}</p>
+			</div>
         <a class="botonInformacion" :href="atleta.boton.accion" v-if="atleta.boton.tipo===2" target="_blank">Más Información</a>
-
       </div>
 
       <div id="main" :style="margen">
         <button class="openbtn" @click="openNav()" v-show="!ocultar">☰ Información Atleta</button>
         <button class="openbtncel" @click="openNav()" v-show="!ocultar">...</button>
 
-        <div class="tituloNombre">
-          <h1 style="margin: 0 5px 0 0">{{atleta.titulo}}</h1>
-          <h3>{{atleta.boton.texto}}</h3>
+        <div class="tituloNombre" :style="margen">
+          <h1>{{atleta.titulo}}</h1>
+          <!-- <h3>{{atleta.boton.texto}}</h3> -->
         </div>
-			<img :src="atleta.imagenAlternativa.url" v-if="atleta.imagenAlternativa">
-			<img :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
-			<video v-if="atleta.video.activo" width="100%" controls><source :src="atleta.video.url" type="video/mp4">
-      Your browser does not support HTML5 video.</video>
+			<div class="contenedorFoto">
+				<img :src="atleta.imagenAlternativa.url" v-if="atleta.imagenAlternativa">
+			</div>
+			<div class="contenedorResto container-fluid">
+				<img id="show-modal" @click="showModal = true" :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
+				<video v-if="atleta.video.activo" width="100%" controls><source :src="atleta.video.url" type="video/mp4">Your browser does not support HTML5 video.</video>
+			</div>
 
       </div>
+
+			<!-- <button id="show-modal" @click="showModal = true">Show Modal</button> -->
+			<modal v-if="showModal" @close="showModal = false">
+				<h3 slot="header">Titulo</h3>
+				<div slot="body">
+				<img  style="width: 100%; max-height: 80%" :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
+				</div>
+			</modal>
+
     </div>
+
     <p_footer />
   </article>
 </template> 
 <script>
 import p_footer from "@/components/p_footer.vue";
+import modal from "@/components/modal.vue";
 
 export default {
   name: "detalleDeportista",
   components: {
-    p_footer
+	p_footer,
+	modal
   },
   data() {
     return {
       atleta: this.$route.params.atletaSeleccionado,
-      ocultar: false,
+	  ocultar: false,
+	  parrafos: [],
       ancho: {
         width: "0",
         color: "#fff"
       },
       margen: {
         margin: "0"
-      }
+	  },
+	  showModal: false
     };
   },
   created () {
-    window.scrollTo(0,0);
+	window.scrollTo(0,0);
 
     },
   methods: {
     openNav() {
       console.log(this.ancho);
       this.ancho.width = "300px";
-      this.margen.margin = "0 0 0 300px";
+      this.margen.margin = "0 300px 0 0";
       this.ocultar = true;
     },
 
@@ -85,8 +101,11 @@ article {
 
 
   h1 {
-        color: #9A175B;
+        color: #fff;
         text-align: center;
+		font-size: 7vw;
+		margin: auto;
+		
     }
 /* ------------------- */
 
@@ -96,11 +115,12 @@ article {
   position:fixed ;
   z-index: 1;
   top: 150px;
-  left: 0;
+  right: 0;
   background-color: #111;
   overflow-x: hidden;
   transition: 0.5s;
   padding-top: 60px;
+  padding-bottom: 20px;
   text-align: center;
 }
 
@@ -132,22 +152,27 @@ article {
 .openbtn  {
   font-size: 20px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(154,23,91, 0.9);
   color: white;
-  padding: 10px 15px;
+  padding: 15px 20px;
   border: none;
   position: fixed;
+  right: 10px;
+  border-radius: 30px 0 0 30px;
+  z-index: 2;
 }
 
 
 .openbtncel {
   font-size: 20px;
   cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(154,23,91, 0.9);
   color: white;
-  padding: 10px 15px;
+  padding: 15px 20px;
   border: none;
   position: fixed;
+  right: 10px;
+  z-index: 2;
 }
 
 
@@ -158,7 +183,7 @@ article {
 }
 
 .openbtn:hover {
-  background-color: rgba(53, 47, 47, 0.6);
+  background-color: rgba(80,105,195, 0.9);
 }
 
 .openbtncel {
@@ -167,7 +192,7 @@ article {
 
 
 #main {
-  transition: margin-left 0.5s;
+  transition: margin-right 0.5s;
   padding: 16px;
   text-align: center;
 }
@@ -200,17 +225,18 @@ article {
 }
   
 
-
-
 .tituloNombre {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  border-style: solid;
-  border-color: #c82990;
-  text-align: right;
-  padding: 5px;
-  position: fixed;
-  right: 10px;
+  	color: #fff;
+ 	text-align: center;
+  	padding: 20vw 5px 20px;
+	right: 0;
+	left: 0;
+	margin: auto;
+	position: absolute;
+  	text-transform: uppercase;
+  	font-size: 20vw;
+	z-index: 1;
+	text-shadow: 2px 2px 4px #000000;
 }
 
 .botonInformacion {
@@ -252,6 +278,21 @@ article {
     border-radius: 10px;
     background-color: #191A1E;
     background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
+}
+
+.contenedorFoto {
+	width: 100%;
+	height: 35vw;
+	overflow: hidden;
+	-webkit-filter: grayscale(100%);
+   		 filter: grayscale(100%);
+}
+
+.contenedorResto * {
+	padding-top: 20px;
+	max-width: 300px;
+	height: auto;
+	cursor: pointer;
 }
 </style>
 

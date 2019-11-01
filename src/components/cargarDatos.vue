@@ -10,6 +10,9 @@
 							<img class="imagen" :src="info.imagen.url">
 							<h3 class="title">{{info.titulo}}</h3>
 						</router-link>
+
+						<div class="cortina"></div>
+
 						</div>
 
 					</div>
@@ -97,7 +100,7 @@ export default {
 		width: 90%;
         /* max-height:600px; */
         text-align: center;
-        overflow-y: auto;
+		overflow:hidden;
 		position: relative;
 	    display: inline-block;
     }
@@ -111,15 +114,30 @@ export default {
 		border-radius: 10px;
 		border: solid 2px #5069C3
 
+
     }
 
+
+	.cortina{
+		width: 100px;
+		height: auto;
+		background-color: #9A175B;
+		z-index: 5;
+		position: absolute;;
+		margin: -100
+	}
+
+
+
 	.contenido:hover .title {
-		display: inline
+		display: inline;
+		/* transition:all 2s ease .2s; */
 	}
 
 	.contenido:hover img {
 		opacity: .5;
-		border: solid 2px #9A175B
+		border: solid 2px #9A175B;
+		
 	}
 
 	.title{
@@ -127,8 +145,12 @@ export default {
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		transform: translate(-50%, -50%);
+		transform: translate(-50%, 0%);
 		display: none;
+		background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(154,23,91,1) 100%);
+		border-radius: 10px;
+		width: 100%;
+		height: 50%;
 	}
 
 	    @media (max-width: 767px) { 

@@ -6,9 +6,9 @@
 
                 <div class="col-lg-3 col-md-2 col-sm-1 col-12" ></div>
 				<div class="col-lg-6 col-md-8 col-sm-10 col-12" style="text-align:center">
-			        <h1>CONTACTA CON NOSOTROS</h1>
+			        <h1><strong>CONTACTA CON NOSOTROS</strong></h1>
 					<div class="formulario">
-						<h4 style="text-align:center">ESCRIBE TU CONSULTA</h4>
+						<h4 style="text-align:center"><strong>ESCRIBE TU CONSULTA</strong></h4>
 							<input type="text" name="name" id="nombre" class="form-control mb-0" placeholder="Nombre" autocomplete="off"> 
                         	<div style="height:30px"><P class="mensajeError" v-if="errorNombre.length">{{errorNombre}}</P></div>
                         	<input type="email" name="correo" id="correo" class="form-control mt-1 mb-0" placeholder="Correo" autocomplete="off"> 
@@ -20,7 +20,7 @@
                         	<button id="boton" class="boton" @click="enviar()">Enviar</button>
 					</div>
 				</div>
-                <div class="col-lg-3 col-md-2 col-sm-1 col-12" style=" margin-top: 10%; text-align:right">
+                <div class="col-lg-3 col-md-2 col-sm-1 col-12 iconosDerecha" style=" margin-top: 10%; text-align:right">
 					<div class="row">
 						<div class="col-md-12">
 						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
@@ -48,7 +48,17 @@
 					</div>
 
 				</div>
-                </div>
+
+                <div class="iconosCel" style=" margin-top: 10%; text-align:center">
+						<a class="contenedorIconos" href="https://twitter.com/Improveit_sm" target="_blank"> <img src="@/assets/img/t_contacto.png" class="iconosRedes color1" alt="icono twitter"></a>
+						<a class="contenedorIconos" href="https://web.facebook.com/improveitsm/?ref=page_internal" target="_blank"> <img src="@/assets/img/f_contacto.png" class="iconosRedes color2" alt="icono Facebook"></a>
+						<a class="contenedorIconos" href="https://www.youtube.com/channel/UCv19StYUploQNnxwz2UYHjw" target="_blank"> <img src="@/assets/img/y_contacto.png" class="iconosRedes  color3" alt="icono youtube"></a>
+						<a class="contenedorIconos" href="https://instagram.com/improveitsm?igshid=a4mtov6e0ty" target="_blank"><img src="@/assets/img/i_contacto.png" class="iconosRedes color4" alt="icono instagram" ></a>
+						<a  class="contenedorIconos" href="https://www.linkedin.com/company/improve-it-sport-management/about/?viewAsMember=true" target="_blank"> <img src="@/assets/img/l_contacto.png" class="iconosRedes color5" alt="logo linkedin"></a>
+				</div>
+
+
+            </div>
 
 
 
@@ -164,6 +174,11 @@ data(){
 }
 </script>
 <style scoped>
+
+	* {
+		font-family: MyriadPro_Regular;
+
+	}
 	article {
 		background-color: #000;
         margin-top: 120px
@@ -173,13 +188,18 @@ data(){
 		padding: 30px 20px;
 		color: #fff;		
 	}
-	h1 {
-		padding: 30px 0;
+	.contacto h1 {
+		padding: 10px 0 0 0;
 		font-size: 2em;
+		color: #9A175B;
 	}
 
 	h4 {
 		padding: 0 0 1em 0 
+	}
+
+	strong{
+		font-weight: bolder;
 	}
 
 
@@ -213,7 +233,7 @@ data(){
 }
 
 .formulario {
-	padding: 2em;
+	padding: 0 2em 2em 2em;
   
     
 }
@@ -259,17 +279,29 @@ data(){
 	background-color: rgba(247,247,247,.8);
 }
 
+	.iconosCel{
+		margin-left: 0;
+		margin-right: 0;
+		margin: auto;
+		text-align: center;
+		display:none;
+	}
 @media (max-width: 767px) { 
-       .formulario  {
+    .formulario  {
 		padding: 1em ;
 
 	}
     .iconosRedes {
 	width: 60px;
 	
+	}
+	.iconosCel {
+		display: block;
+	}
+	.iconosDerecha {
+		display:none;
+	}
 }
-        }
-
 
 
 </style>

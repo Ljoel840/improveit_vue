@@ -6,6 +6,9 @@ import BootstrapVue from 'bootstrap-vue'
 import 'bootstrap/dist/css/bootstrap.css'
 import 'bootstrap-vue/dist/bootstrap-vue.css'
 import { NavbarPlugin } from 'bootstrap-vue'
+import estilos from './assets/css/estilos.css'
+
+Vue.use(estilos)
 Vue.use(NavbarPlugin)
 
 

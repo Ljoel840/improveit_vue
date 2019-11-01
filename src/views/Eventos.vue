@@ -3,12 +3,12 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Gestión de Eventos Deportivos y Actividades Relacionadas al Deporte</h1>
+                <h1><strong>Gestión de Eventos Deportivos y Actividades Relacionadas al Deporte</strong></h1>
             </div>
         </div>
         
         
-        <div class="textoDescripcion">
+        <div class="textoDescripcion container">
             <h3>Contamos con vasta experiencia en organización de eventos deportivos de primer nivel, así como de actividades asociadas, como ser cursos, talleres o seminarios. Desde producciones nacionales hasta internacionales, entendemos los requisitos y las necesidades de cada deporte y conocemos las reglamentaciones y condiciones de cada parte involucrada.</h3>
 
         </div>
@@ -49,6 +49,10 @@ export default {
     article {
         background-color: #000;
     }
+	strong {
+		font-weight: bolder;
+	}
+
 
     .tope{
         background-size: auto 200px;
@@ -70,15 +74,19 @@ export default {
     }
 
     .tope h1 {
-        color: white; text-align: center; font-size: 4vh; padding: 10px 1em 
+        color: white; text-align: center; font-size: 3vh; padding: 10px 1em;text-transform: uppercase; 
 
     }
 
     .textoDescripcion h3 {
         color: white;
-        text-align: center;
+        text-align: justify;
         padding: 2em;
-        font-size: 1.5em;
+        font-size: 1.3em;
+		max-width: 1200px;
+		line-height: 2em;
+		font-family: MyriadPro_Regular;
+
         
     }
 

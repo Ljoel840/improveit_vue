@@ -38,7 +38,7 @@
                 <div class="css-shapes-preview"></div>
                 <div class="css-shapes-preview2"></div>
                 <div class="serviciosImagenes">
-		            <router-link  to="/startup" active-class="active">
+		            <router-link  to="/startups" active-class="active">
                         <img src="@/assets/img/imagen5.jpg" alt="Opcion Deportista" class="opciones">
                         <h1 class="textoImagenes">Startups de Emprendimientos Deportivos</h1>
 					</router-link>
@@ -151,10 +151,13 @@ export default {
     position: absolute;
     margin-top: -30vw;
     color: #fff;
-    font-size: 3vw;
+    font-size: 2vw;
     z-index: 8;     
     right: 5vw;
     padding-left: 50%;
+	text-transform: uppercase;
+	text-align: right;
+	/* max-width: 900px */
 
   }
  
@@ -162,14 +165,32 @@ export default {
     position: absolute;
     margin-top: -30vw;
     color: #fff;
-    font-size: 3vw;
+    font-size: 2vw;
     z-index: 8;     
     left: 5vw;
     padding-right: 50%;
+	text-transform: uppercase;
+	text-align: left;
 
   }
   img:hover {
       opacity: 0.5;
+  }
+  
+
+  @media (max-width: 900px) {
+	  .textoImagenes{
+		  font-size: 2.5vw;
+	      padding-left: 30%;
+
+	  }
+	  .textoImagenes2{
+		  font-size: 2.5vw;
+	      padding-right: 30%;
+
+	  }
+
+
   }
 
 </style>

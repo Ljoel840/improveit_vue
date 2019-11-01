@@ -3,12 +3,12 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Asesoramiento a Clubes, Federaciones y Organizaciones Deportivas</h1>
+                <h1><strong>Asesoramiento a Clubes, Federaciones y Organizaciones Deportivas</strong></h1>
             </div>
         </div>
         
         
-        <div class="textoDescripcion">
+        <div class="textoDescripcion container">
             <h3>Brindamos soluciones simples y efectivas para optimizar recursos y generar mayores ingresos a cualquier tipo de negocio deportivo. Damos asesoramiento en todos los sectores de la empresa, pasando por capacitación del personal, campañas de comunicación y marketing, espacio físico de las instalaciones o actualización de materiales y sistemas de control.</h3>
 
         </div>
@@ -50,6 +50,10 @@ export default {
         background-color: #000;
     }
 
+	strong {
+		font-weight: bolder;
+	}
+
     .tope{
         background-size: auto 200px;
         background-repeat: no-repeat;
@@ -70,15 +74,19 @@ export default {
     }
 
     .tope h1 {
-        color: white; text-align: center; font-size: 4vh; padding: 10px 1em 
+        color: white; text-align: center; font-size: 3vh; padding: 10px 1em;text-transform: uppercase; 
 
     }
 
     .textoDescripcion h3 {
         color: white;
-        text-align: center;
+        text-align: justify;
         padding: 2em;
-        font-size: 1.5em;
+        font-size: 1.3em;
+		max-width: 1200px;
+		line-height: 2em;
+		font-family: MyriadPro_Regular;
+
         
     }
 

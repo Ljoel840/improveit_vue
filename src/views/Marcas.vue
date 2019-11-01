@@ -3,12 +3,12 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Campañas Empresariales y Activación de Marcas</h1>
+                <h1><strong>Campañas Empresariales y Activación de Marcas</strong></h1>
             </div>
         </div>
         
         
-        <div class="textoDescripcion">
+        <div class="textoDescripcion container">
             <h3>Identificamos la conexión perfecta entre marcas y deportistas, aprovechando ideas creativas y atributos únicos para contar historias. Trabajamos con las empresas para aprovechar al máximo sus inversiones en patrocinio y marketing deportivo</h3>
 
         </div>
@@ -48,6 +48,10 @@ export default {
     article {
         background-color: #000;
     }
+		strong {
+		font-weight: bolder;
+	}
+
 
     .tope{
         background-size: auto 200px;
@@ -69,15 +73,18 @@ export default {
     }
 
     .tope h1 {
-        color: white; text-align: center; font-size: 4vh; padding: 10px 1em 
+        color: white; text-align: center; font-size: 3vh; padding: 10px 1em;text-transform: uppercase; 
 
     }
 
     .textoDescripcion h3 {
         color: white;
-        text-align: center;
+        text-align: justify;
         padding: 2em;
-        font-size: 1.5em;
+        font-size: 1.3em;
+		max-width: 1200px;
+		line-height: 2em;
+		font-family: MyriadPro_Regular;
         
     }
 

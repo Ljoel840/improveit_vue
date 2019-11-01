@@ -7,7 +7,7 @@
         data-toggle="collapse"
         data-target="#navbarResponsive"
         aria-controls="navbarResponsive"
-        aria-expanded="false"
+        aria-expanded="aria"
         aria-label="Toggle navigation"
       >
         <span class="navbar-toggler-icon"></span>
@@ -18,24 +18,25 @@
       </a>
 
       <div class="collapse navbar-collapse" id="navbarResponsive">
+
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <li class="nav-item" @click="colapsar()">
             <router-link class="nav-link" to="/">Inicio</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="colapsar()">
             <router-link class="nav-link" to="/deportistas" active-class="active">Atletas</router-link>
           </li>
-          <li class="nav-item">
-            <router-link class="nav-link" to="/marcas" active-class="active">Marcas</router-link>
+          <li class="nav-item" @click="colapsar()">
+            <router-link class="nav-link" to="/marcas" active-class="active" >Marcas</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="colapsar()">
             <router-link class="nav-link" to="/eventos" active-class="active">Eventos</router-link>
           </li>
           <!-- <li class="nav-item">
             <router-link class="nav-link" to="/asesoramiento" active-class="active">Asesoramiento</router-link>
           </li> -->
 
-          <li class="nav-item dropdown">
+          <li class="nav-item dropdown" @click="colapsar()">
               <a class="nav-link dropdown-toggle " href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Asesoramiento
               </a>
@@ -43,10 +44,10 @@
               <ul class="dropdown-menu dropdown-menu-right prueba" aria-labelledby="navbarDropdownMenuLink">
                 <!-- <li><a class="dropdown-item" href="#">Asesoramiento a organizaciones deportivas</a></li> -->
                 <!-- <li><a class="dropdown-item" href="#">Startups de emprendimientos deportivos</a></li> -->
-                 <li>
+                 <li @click="colapsar()">
                   <router-link class="dropdown-item" to="/asesoramiento" active-class="active">Asesoramiento a organizaciones deportivas</router-link>
                 </li>
-                <li>
+                <li @click="colapsar()">
                   <router-link class="dropdown-item" to="/startups" active-class="active">Startups de emprendimientos deportivos</router-link>
                 </li>
                  
@@ -54,10 +55,10 @@
           </li>
 
 
-          <li class="nav-item">
+          <li class="nav-item" @click="colapsar()">
             <router-link class="nav-link" to="/nosotros" active-class="active">Nosotros</router-link>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" @click="colapsar()">
             <router-link class="nav-link" to="/contacto" active-class="active">Contacto</router-link>
           </li>
         </ul>
@@ -67,6 +68,22 @@
     <router-view />
   </div>
 </template>
+<script>
+export default {
+	data(){
+		return{
+			aria:true
+
+		}
+	},
+	methods: {
+		colapsar(){
+			$('.navbar-collapse').collapse('hide');
+		}
+		
+	},
+}
+</script>
 
 <style>
     .navbar {
@@ -76,7 +93,9 @@
     }
     .nav-link {
       color: white;
-      text-align: center;
+	  text-align: center;
+	  font-family: MyriadPro_Regular;
+
 
     }
     .router-link-active{
@@ -124,6 +143,9 @@
 
 }
 
+.nav-item::after {
+	display: none
+}
 
 /* .dropdown-menu {
   width: 300px

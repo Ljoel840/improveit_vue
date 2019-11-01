@@ -3,14 +3,13 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1>Representación y Asesoramiento de Deportistas de Alto Rendimiento</h1>
+                <h1><strong>Representación y Asesoramiento de Deportistas de Alto Rendimiento</strong></h1>
             </div>
         </div>
         
         
-        <div class="textoDescripcion">
+        <div class="textoDescripcion container">
             <h3>Trabajamos con nuestros atletas en la creación de marcas personales y generación de ingresos a través de asociaciones comerciales. Damos el soporte necesario para que, sin importar el nivel inicial de su carrera, todos nuestros deportistas puedan llegar al máximo de su potencial.</h3>
-
         </div>
 
         
@@ -49,6 +48,9 @@ export default {
         background-color: #000;
     }
 
+	strong {
+		font-weight: bolder;
+	}
     .tope{
         background-size: auto 200px;
         background-repeat: no-repeat;
@@ -69,15 +71,23 @@ export default {
     }
 
     .tope h1 {
-        color: white; text-align: center; font-size: 4vh; padding: 10px 1em 
+        color: white; text-align: center; font-size: 3vh; padding: 10px 1em; text-transform: uppercase;
+		 
 
     }
+	.textoDescripcion{
+		margin: auto;
+	}
 
     .textoDescripcion h3 {
         color: white;
-        text-align: center;
+        text-align: justify;
+		font-family: MyriadPro_Regular;
         padding: 2em;
-        font-size: 1.5em;
+        font-size: 1.3em;
+		max-width: 1200px;
+		line-height: 2em;
+
         
     }
 

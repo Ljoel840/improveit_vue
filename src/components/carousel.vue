@@ -1,5 +1,6 @@
 <template>
   <section>
+	<div class="margen"></div>
     <img class="fondoDefecto" src="@/assets/img/f_contacto.jpg" v-if="!data">
     <b-carousel 
       id="carousel-1"
@@ -83,8 +84,20 @@ section {
   margin-top: 50px;
 }
 
+.margen{
+	height:50px
+}
+
 .fondoDefecto {
   width: 100%;
   height: auto;
 }
+
+@media screen  and (max-width: 500px)  {
+.margen{
+	height:120px
+}
+	
+}
+
 </style>
