@@ -1,261 +1,130 @@
 <template>
-  <article>
-    <h2 v-if="!datos"> NO HAY DATOS CARGADOS</h2>
-    <div class="container-fluid" v-if="datos">
-      
-      <div id="mySidebar" class="sidebar" :style="ancho">
-        <a href="javascript:void(0)" class="closebtn" @click="closeNav()">×</a>
-        <img class="profile" :src="datos.imagen.url" alt="Profile" />
-		
-          <h4 style="margin: 10px 5px 0 0">{{datos.titulo}}</h4>
-          <!-- <p class="text-center">{{datos.boton.texto}}</p> -->
-			<div v-for="parraf in datos.parrafos" :key="parraf.id">
-				<p >{{parraf.texto}}</p>
+  <section>
+		<h2 class="mensajeVacio" v-if="!datos"> NO HAY DATOS CARGADOS</h2>
+		<div class="container-fluid" v-if="datos">
+			<h1 class="titulo">{{datos.titulo}}</h1>
+			<div id="main" >
+				<h2 v-if="datos.video.activo"><strong>Videos</strong></h2>
+				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" @mouseover="cambiar" @mouseleave="volver" style="cursor:pointer" v-if="(datos.video.activo) && (datos.titulo==='#GanaConIndumex')">
+				<img class="videos" id="show-modal" @click="showModal = true, numero=3" :src="urlPoster2" @mouseover="cambiar2" @mouseleave="volver2" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo==='#GanaConIndumex')"> 
+				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="datos.video.poster" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo!=='#GanaConIndumex')"> 
+
+
+				<h2><strong>Imágenes</strong></h2>
+				<img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa" @click="showModal = true, numero=0" style="cursor:pointer">
+				<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2" @click="showModal = true, numero=1" style="cursor:pointer">
+
+				<modal v-if="showModal" @close="showModal = false">
+					<div slot="body" style="text-align: center">
+						<video v-if="numero>1" width="100%"  style="min-width: 100%" controls autoplay><source :src="urls[numero]" type="video/mp4"> Your browser does not support HTML5 video.</video>
+						<img style="width: auto; max-width: 100%; max-height: 80%" :src="urls[numero]" v-if="numero<2">
+					</div>
+				</modal>
+				
 			</div>
-
-        <a class="botonInformacion" :href="datos.boton.accion" v-if="datos.boton.tipo===2" target="_blank">Página Oficial</a>
-
-      </div>
-
-      <div id="main" :style="margen">
-        <button class="openbtn" @click="openNav()" v-show="!ocultar">☰ Información</button>
-        <button class="openbtncel" @click="openNav()" v-show="!ocultar">...</button>
-
-			<img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa">
-			<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2">
-			<video v-if="datos.video.activo" width="100%" controls><source :src="datos.video.url" type="video/mp4">
-      Your browser does not support HTML5 video.</video>
-      <video v-if="datos.video.poster" width="100%" controls><source :src="datos.video.poster" type="video/mp4">
-      Your browser does not support HTML5 video.</video>
-			
-
-      </div>
-    </div>
-    <p_footer />
-  </article>
+		</div>
+		<p_footer />
+  </section>
 </template> 
 <script>
 import p_footer from "@/components/p_footer.vue";
+import modal from "@/components/modal.vue";
 
 export default {
   name: "detalleDatos",
   components: {
-    p_footer
+	p_footer,
+	modal
   },
   data() {
     return {
       datos: this.$route.params.infoSeleccionada,
-      ocultar: true,
-      ancho: {
-        width: "300px",
-        color: "#fff"
-      },
-      margen: {
-        margin: "300px"
-      }
+	  ocultar: true,
+	  urlPoster1: require('@/assets/img/poster_video.jpg'),
+	  urlPoster2: require('@/assets/img/poster_video2.jpg'),
+  	  showModal: false,
+	  showModal2: false,
+	  urls: []
     };
   },
   created () {
     window.scrollTo(0,0);
+	this.urls.push(this.datos.imagenAlternativa.url)
+	this.urls.push(this.datos.imagenAlternativa2.url)
+	this.urls.push(this.datos.video.url)
+	this.urls.push(this.datos.video.poster)
+	console.log(this.urls)
 
     },
  
   methods: {
-    openNav() {
-      console.log(this.ancho);
-      this.ancho.width = "300px";
-      this.margen.margin = "0 0 0 300px";
-      this.ocultar = true;
-    },
-
-    closeNav() {
-      this.ancho.width = "0";
-      this.margen.margin = "0";
-      this.ocultar = false;
-    }
+	  cambiar(){
+		  this.urlPoster1= require('@/assets/img/poster_video1b.jpg')
+	  },
+	   volver(){
+		  this.urlPoster1= require('@/assets/img/poster_video.jpg')
+	  },
+		cambiar2(){
+		  this.urlPoster2= require('@/assets/img/poster_video2b.jpg')
+	  },
+	   volver2(){
+		  this.urlPoster2= require('@/assets/img/poster_video2.jpg')
+	  },
+	  
+    
   }
 };
+
 </script>
 
-<style scope>
-article {
+<style scoped>
+section {
   margin-top: 130px;
   border-radius: 12px;
   margin-bottom: 10px;
   color: #fff;
+	font-family: MyriadPro_Regular;
 }
 
 
-  h2 {
-        color: #9A175B;
-        text-align: center;
-    }
+.titulo{
+	padding: 30px;
+	color: #999999
+}
+
+
+#main h2 {
+	color: #fff;
+	text-align: Left;
+	padding: 30px 30px 0 30px;
+}
 /* ------------------- */
-
-.sidebar {
-  height: auto;
-  width: 0;
-  position: absolute;
-  z-index: 1;
-  top: 150px;
-  left: 0;
-  background-color: #111;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  text-align: center;
-  padding-bottom: 60px;
-}
-
-.sidebar a {
-  padding: 8px 8px 8px 8px;
-  text-decoration: none;
-  display: block;
-  transition: 0.3s;
-  margin: auto;
-}
-
-.sidebar a:hover {
-  color: #f1f1f1;
-}
-
-.sidebar p {
-  text-align: justify;
-  padding: 10px;
-}
-
-.sidebar .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-.openbtn  {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  position: fixed;
-}
-
-
-.openbtncel {
-  font-size: 20px;
-  cursor: pointer;
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 10px 15px;
-  border: none;
-  position: fixed;
-}
-
-
-
-.profile {
-  width: 80%;
-  height: auto;
-}
-
-.openbtn:hover {
-  background-color: rgba(53, 47, 47, 0.6);
-}
-
-.openbtncel {
-  display: none;
-}
-
-
-#main {
-  transition: margin-left 0.5s;
-  padding: 16px;
-  text-align: left;
+#main video {
+	max-width: 500px;
+	padding: 20px
 }
 
 #main img {
-  width: 100%;
+	max-width: 500px;
+	padding: 20px;
+	width: 100%
 }
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+
+.mensajeVacio {
+	padding: 30px;
+	color: #9A175B;
+	text-align:center;
+}
+
+
 @media screen and (max-height: 450px) {
-  .sidebar {
-    padding-top: 15px;
-  }
-  .sidebar a {
-    font-size: 1em;
-  }
+
  
 }
 
 @media screen  and (max-width: 600px) {
-  .tituloNombre {
-    display: none;
-  }
-  .openbtn{
-    display:none;
-  }
-  .openbtncel {
-    display: inline;
-  }
 
 }
   
-img {
-  padding: 10px 0
-}
-
-.tituloNombre {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.6);
-  border-style: solid;
-  border-color: #c82990;
-  text-align: right;
-  padding: 5px;
-  position: fixed;
-  right: 10px;
-}
-
-.botonInformacion {
-
-    width: 200px;
-    border: none;
-    color: white;
-    background: transparent;
-    background-color: #5069C3;
-    margin: 4px 2px;
-    transition-duration: 0.4s;
-    cursor: pointer;
-    text-decoration: none;
-    /* text-transform: uppercase; */
-    font-family: sans-serif;
-    font-size: 1em;
-    text-align: center;
-}
-
-.botonInformacion:hover{
-    cursor:pointer;
-    color: white;
-    background-color: #9A175B;
-    /* cursor: default; */
-
-}
-
-
-::-webkit-scrollbar{
-    width: 12px;
-    background-color: #F5F5F5;
-}
-::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
-    /* border-radius: 10px; */
-    background-color: rgb(121, 120, 120);
-}
-::-webkit-scrollbar-thumb{
-    border-radius: 10px;
-    background-color: #191A1E;
-    background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
-}
 </style>
 

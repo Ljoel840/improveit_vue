@@ -68,10 +68,10 @@ export default {
 }
 
 .modal-container {
-  width: 80%;
+  width: 90%;
   height: auto;
   margin: 0px auto;
-  padding: 20px 30px;
+  padding: 10px 10px;
   /* background-color: #000; */
   border-radius: 2px;
   /* box-shadow: 0 2px 8px rgba(0, 0, 0, .33); */
@@ -85,8 +85,9 @@ export default {
 }
 
 .modal-body {
-  margin: 20px 0;
-  width: 100%
+  margin: 0px 0;
+  width: 100%;
+  text-align: center;
 }
 
 .modal-default-button {
@@ -96,7 +97,10 @@ export default {
     background: transparent;
     transition-duration: 0.4s;
     cursor: pointer;
-    text-decoration: none;
+	text-decoration: none;
+	 z-index: 9999;
+	 position: absolute;
+	 right: 0;
 }
 
 /*

@@ -55,9 +55,6 @@ export default {
 		padding-bottom: 50px;
 	}
 
-	strong{
-		font-weight: bolder;
-	}
 
 	.texto{
 		background-color: rgba(0, 0, 0, 0.8);

@@ -77,7 +77,7 @@ export default {
 };
 </script>
 
-<style scope>
+<style scoped>
 article {
   margin-top: 130px;
   border-radius: 12px;
@@ -248,8 +248,6 @@ img {
     background-color: #F5F5F5;
 }
 ::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
-    /* border-radius: 10px; */
     background-color: rgb(121, 120, 120);
 }
 ::-webkit-scrollbar-thumb{

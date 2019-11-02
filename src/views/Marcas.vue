@@ -14,7 +14,7 @@
         </div>
 
         
-        <cargarDatos pag='/puntajes'></cargarDatos>
+        <cargar_marcas pag='/puntajes'></cargar_marcas>
 
         <br>
         <p_footer/>
@@ -23,7 +23,7 @@
     </article>
 </template>
 <script>
-import cargarDatos from '@/components/cargarDatos.vue';
+import cargar_marcas from '@/components/cargar_marcas.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
@@ -32,7 +32,7 @@ export default {
     name: 'deportistas',
     components: {
     p_footer,
-    cargarDatos
+    cargar_marcas
     },
     data: () => ({
         campos: [],

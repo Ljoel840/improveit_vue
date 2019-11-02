@@ -198,9 +198,6 @@ data(){
 		padding: 0 0 1em 0 
 	}
 
-	strong{
-		font-weight: bolder;
-	}
 
 
 	#boton{

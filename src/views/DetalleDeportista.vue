@@ -1,6 +1,6 @@
 <template>
-  <article>
-    <h1 v-if="!atleta"> NO HAY DATOS CARGADOS</h1>
+  <section>
+    <h2 v-if="!atleta"> NO HAY DATOS CARGADOS</h2>
     <div class="container-fluid" v-if="atleta">
       
       <div id="mySidebar" class="sidebar" :style="ancho">
@@ -26,6 +26,7 @@
 				<img :src="atleta.imagenAlternativa.url" v-if="atleta.imagenAlternativa">
 			</div>
 			<div class="contenedorResto container-fluid">
+				<img id="show-modal" @click="showModal2 = true" :src="atleta.imagenAlternativa.url" v-if="atleta.imagenAlternativa">
 				<img id="show-modal" @click="showModal = true" :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
 				<video v-if="atleta.video.activo" width="100%" controls><source :src="atleta.video.url" type="video/mp4">Your browser does not support HTML5 video.</video>
 			</div>
@@ -34,16 +35,21 @@
 
 			<!-- <button id="show-modal" @click="showModal = true">Show Modal</button> -->
 			<modal v-if="showModal" @close="showModal = false">
-				<h3 slot="header">Titulo</h3>
 				<div slot="body">
-				<img  style="width: 100%; max-height: 80%" :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
+					<img  style="width: auto; max-width: 100%; max-height: 80%" :src="atleta.imagenAlternativa2.url" v-if="atleta.imagenAlternativa2">
 				</div>
 			</modal>
+			<modal v-if="showModal2" @close="showModal2 = false">
+				<div slot="body">
+					<img style="width: auto; max-width: 100%; max-height: 80%" :src="atleta.imagenAlternativa.url" v-if="atleta.imagenAlternativa">
+				</div>
+			</modal>
+
 
     </div>
 
     <p_footer />
-  </article>
+  </section>
 </template> 
 <script>
 import p_footer from "@/components/p_footer.vue";
@@ -67,7 +73,8 @@ export default {
       margen: {
         margin: "0"
 	  },
-	  showModal: false
+	  showModal: false,
+	  showModal2: false
     };
   },
   created () {
@@ -91,8 +98,8 @@ export default {
 };
 </script>
 
-<style scope>
-article {
+<style scoped>
+section {
   margin-top: 130px;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -175,7 +182,11 @@ article {
   z-index: 2;
 }
 
-
+.mensajeVacio {
+	padding: 30px;
+	color: #9A175B;
+	text-align:center;
+}
 
 .profile {
   width: 80%;
@@ -212,9 +223,9 @@ article {
 }
 
 @media screen  and (max-width: 600px) {
-  .tituloNombre {
+  /* .tituloNombre {
     display: none;
-  }
+  } */
   .openbtn{
     display:none;
   }
@@ -265,13 +276,12 @@ article {
 }
 
 
+
 ::-webkit-scrollbar{
     width: 12px;
     background-color: #F5F5F5;
 }
 ::-webkit-scrollbar-track{
-    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.9);
-    /* border-radius: 10px; */
     background-color: rgb(121, 120, 120);
 }
 ::-webkit-scrollbar-thumb{
@@ -289,7 +299,7 @@ article {
 }
 
 .contenedorResto * {
-	padding-top: 20px;
+	padding: 10px;
 	max-width: 300px;
 	height: auto;
 	cursor: pointer;
