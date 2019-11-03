@@ -26,7 +26,7 @@
 import axios from 'axios'
 
 export default {
-    name: 'cargarDeportistas',
+    name: 'cargar_deportistas',
     data(){
         return{
 		   deportistas:[],

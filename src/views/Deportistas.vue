@@ -13,7 +13,7 @@
         </div>
 
         
-        <cargarDeportistas></cargarDeportistas>
+        <cargar_deportistas></cargar_deportistas>
 
         <br>
         <p_footer/>
@@ -22,7 +22,7 @@
     </article>
 </template>
 <script>
-import cargarDeportistas from '@/components/cargarDeportistas.vue';
+import cargar_deportistas from '@/components/cargar_deportistas.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
@@ -31,7 +31,7 @@ export default {
     name: 'deportistas',
     components: {
     p_footer,
-    cargarDeportistas
+    cargar_deportistas
     },
     data: () => ({
         campos: [],
@@ -103,5 +103,15 @@ export default {
         }
         
 	}
+
+	@media only screen and (max-width: 400px) {
+        .textoDescripcion h3 {
+            font-size: 1.2em;
+			padding: 20px 0;
+        }
+        
+        
+	}
+
 
 </style>

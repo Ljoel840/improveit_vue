@@ -90,15 +90,17 @@ export default {
 
     @media only screen and (max-width: 768px) {
         .textoDescripcion h3 {
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
         .tope h1 {
             font-size: 3vh;
-      
-            
 
         }
-        
+		.textoDescripcion h3 {
+			padding: 1em 0;
+
+		}
+
 	}
 
 </style>

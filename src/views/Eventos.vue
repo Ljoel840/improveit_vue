@@ -14,7 +14,7 @@
         </div>
 
         
-        <cargarDatos pag='/eventos'></cargarDatos>
+        <cargar_datos pag='/eventos'></cargar_datos>
 
         <br>
         <p_footer/>
@@ -23,7 +23,7 @@
     </article>
 </template>
 <script>
-import cargarDatos from '@/components/cargarDatos.vue';
+import cargar_datos from '@/components/cargar_datos.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
@@ -32,7 +32,7 @@ export default {
     name: 'eventos',
     components: {
     p_footer,
-    cargarDatos
+    cargar_datos
     },
     data: () => ({
         campos: [],
@@ -92,15 +92,18 @@ export default {
 
     @media only screen and (max-width: 768px) {
         .textoDescripcion h3 {
-            font-size: 1.3em;
+            font-size: 1.2em;
         }
         .tope h1 {
             font-size: 3vh;
-      
-            
 
         }
-        
+		.textoDescripcion h3 {
+			padding: 1em 0;
+
+		}
+
 	}
+
 
 </style>

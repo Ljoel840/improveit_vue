@@ -7,7 +7,10 @@
                 <div class="serviciosImagenes">
 					<router-link  to="/deportistas" active-class="active">
                         <img src="@/assets/img/imagen1.jpg" alt="Opcion Deportista" class="opciones">
-                        <h1 class="textoImagenes">Representación y Asesoramiento de Deportistas de Alto Rendimiento</h1>
+						<div class="textoImagenes">
+							<h1 >Representación y Asesoramiento </h1>
+							<h1 >de Deportistas de Alto Rendimiento</h1>
+						</div>
 					</router-link>
                 </div>
                 <div class="css-shapes-preview3"></div>
@@ -16,7 +19,10 @@
                 <div class="serviciosImagenes">
 		            <router-link  to="/marcas" active-class="active">
                         <img src="@/assets/img/imagen2.jpg" alt="Opcion Marcas" class="opciones">
-                        <h1 class="textoImagenes2">Campañas Empresariales y Activación de Marcas</h1>
+						<div class="textoImagenes2">
+							<h1>Campañas Empresariales</h1>
+							<h1>y Activación de Marcas</h1>
+						</div>
 					</router-link>
                 </div>
                 <div class="css-shapes-preview"></div>
@@ -24,7 +30,11 @@
                 <div class="serviciosImagenes">
 		            <router-link  to="/eventos" active-class="active">
                         <img src="@/assets/img/imagen3.jpg" alt="Opcion Eventos" class="opciones">
-                        <h1 class="textoImagenes">Gestión de Eventos Deportivos y Actividades Relacionadas al Deporte</h1>
+						<div class="textoImagenes">
+	                        <h1 >Gestión de Eventos Deportivos </h1>
+	                        <h1 >y Actividades Relacionadas al Deporte</h1>
+
+						</div>
 					</router-link>
                 </div>
                 <div class="css-shapes-preview3"></div>
@@ -32,7 +42,10 @@
                 <div class="serviciosImagenes">
 		            <router-link  to="/asesoramiento" active-class="active">
                         <img src="@/assets/img/imagen4.jpg" alt="Opcion Ventas" class="opciones">
-                        <h1 class="textoImagenes2">Asesoramiento a Clubes, Federaciones y Organizaciones Deportivas</h1>
+						<div class="textoImagenes2">
+							<h1>Asesoramiento a Clubes, Federaciones </h1>
+							<h1>y Organizaciones Deportivas</h1>
+						</div>
 					</router-link>
                 </div>
                 <div class="css-shapes-preview"></div>
@@ -40,7 +53,10 @@
                 <div class="serviciosImagenes">
 		            <router-link  to="/startups" active-class="active">
                         <img src="@/assets/img/imagen5.jpg" alt="Opcion Deportista" class="opciones">
-                        <h1 class="textoImagenes">Startups de Emprendimientos Deportivos</h1>
+						<div class="textoImagenes">
+							<h1>Startups de Emprendimientos</h1>
+							<h1>Deportivos</h1>
+						</div>
 					</router-link>
                 </div>
             </div> 
@@ -147,6 +163,12 @@ export default {
     -webkit-transform: rotate(3deg) skew(3deg); 
     z-index: 10;
 }
+
+
+h1 {
+	font-size: 2vw;
+	margin: 0;
+}
  .textoImagenes {
     position: absolute;
     margin-top: -30vw;
@@ -158,7 +180,6 @@ export default {
 	text-transform: uppercase;
 	text-align: right;
 	/* max-width: 900px */
-
   }
  
  .textoImagenes2 {
@@ -179,16 +200,40 @@ export default {
   
 
   @media (max-width: 900px) {
-	  .textoImagenes{
-		  font-size: 2.5vw;
-	      padding-left: 30%;
+		.servicios {
+			margin-top: 6em;
+		}	
+		.textoImagenes{
+			padding-left: 30%;
 
-	  }
-	  .textoImagenes2{
-		  font-size: 2.5vw;
-	      padding-right: 30%;
+		}
+		.textoImagenes2{
+			padding-right: 30%;
 
-	  }
+		}
+		h1 {
+			font-size: 2.5vw;
+		}
+
+
+  }
+
+    @media (max-width: 400px) {
+		.servicios {
+			margin-top: 3em;
+		}	
+
+		.textoImagenes{
+			padding-left: 20%;
+
+		}
+		.textoImagenes2{
+			padding-right: 20%;
+
+		}
+		h1 {
+			font-size: 4vw;
+		}
 
 
   }

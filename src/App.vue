@@ -44,13 +44,23 @@
               <ul class="dropdown-menu dropdown-menu-right prueba" aria-labelledby="navbarDropdownMenuLink">
                 <!-- <li><a class="dropdown-item" href="#">Asesoramiento a organizaciones deportivas</a></li> -->
                 <!-- <li><a class="dropdown-item" href="#">Startups de emprendimientos deportivos</a></li> -->
-                 <li @click="colapsar()">
+                 <li @click="colapsar()" class="opcionesPc">
                   <router-link class="dropdown-item" to="/asesoramiento" active-class="active">Asesoramiento a organizaciones deportivas</router-link>
                 </li>
-                <li @click="colapsar()">
+                <li @click="colapsar()" class="opcionesPc">
                   <router-link class="dropdown-item" to="/startups" active-class="active">Startups de emprendimientos deportivos</router-link>
                 </li>
-                 
+
+                <li @click="colapsar()" class="opcionesCelular">
+                  <router-link class="dropdown-item" to="/asesoramiento" active-class="active">Asesoramiento a organizaciones</router-link>
+                </li>
+                <li @click="colapsar()" class="opcionesCelular">
+                  <router-link class="dropdown-item" to="/startups" active-class="active">Startups de emprendimientos </router-link>
+                </li>				 
+
+
+
+
               </ul>
           </li>
 
@@ -166,6 +176,24 @@ export default {
     background-color: #191A1E;
     background-image: -webkit-linear-gradient(90deg,transparent,rgba(0, 0, 0, 0.4) 50%,transparent,transparent)
 }
+
+.opcionesCelular {
+	display: none
+}
+
+@media only screen and (max-width: 500px) {
+       .opcionesCelular{
+		   display: block
+	   } 
+	    .opcionesPc{
+		   display: none
+	   } 
+
+	   
+
+	}
+
+
 
 
 </style>

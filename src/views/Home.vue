@@ -89,5 +89,17 @@ export default {
 
     }
 
+ @media only screen and (max-width: 400px) {
+        .informacion h3 {
+          font-size: 1em;
+          padding: 1em;
+          text-align: justify;
+        }
+     
+
+    }
+
+
+
  
 </style>
