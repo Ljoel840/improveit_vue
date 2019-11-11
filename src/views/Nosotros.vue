@@ -2,6 +2,7 @@
   <article>
 		<div class="container-fluid p-0">
 				<div class="col-md-12 p-0 texto">
+					<br>
 					<h4><strong>MISIÓN</strong></h4>
 					<P >Brindar a nuestros clientes soluciones integrales logrando la interacción perfecta entre negocios y deporte. Para ello definimos 3 metas fundamentales:</P>
 					<ul >
@@ -49,7 +50,7 @@ export default {
 <style scoped>
 	article {
 		color: #fff;
-		margin-top: 150px;
+		margin-top: 120px;
 		background-image: url("../assets/img/logogrande.png");
 		background-size: cover;
 		padding-bottom: 50px;
@@ -58,6 +59,7 @@ export default {
 
 	.texto{
 		background-color: rgba(0, 0, 0, 0.8);
+		
 	} 
 
 	* {
@@ -70,10 +72,13 @@ export default {
 	h4 {
 		
 		/* background-color: rgba(0, 0, 0, 0.8); */
-		border-top: solid 5px  #68B5E3;
-		border-bottom: solid 5px  #68B5E3;
+		/* border-bottom: solid 10px  #68B5E3; */
 		padding: 10px 0;
 		padding-left: 20%;
+		border-bottom: 3px solid;
+  		border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 10%, rgba(0,0,0,0) 18%, rgba(80,105,195,1) 18%, rgba(0,0,0,0) 90%);
+  		border-image-slice: 1;
+		
 	}
 	p, ul  {
 		padding: 0 20%;
@@ -101,8 +106,13 @@ export default {
         p, ul  {
 		padding: 0 5%;
 
-	}
+		}
+		h4 {
+		padding: 0 5%;
+		border-image-source: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 3%, rgba(80,105,195,1) 3%, rgba(0,0,0,0) 90%);
+
         }
+}
 
 	
 </style>

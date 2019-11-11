@@ -76,8 +76,8 @@
 					</span>
 					</div>
 				</div>
-                
         </div>
+                <p class="copyright text-Left">Delfasoft &#169; 2019 versión 3.3.0 </p>
     </footer>
 </template>
 <script>
@@ -199,6 +199,12 @@ export default {
 	}	
 	.color5{
 		background-color: rgba(247,247,247,.8);
+	}
+
+	.copyright {
+		font-family: sans-serif;
+		font-size: .8em;
+		color: rgb(95, 95, 95)
 	}
 
 </style>

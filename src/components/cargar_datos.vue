@@ -136,23 +136,36 @@ export default {
 	.title{
 		color: #fff;
 		position: absolute;
-		top: 50%;
+		top: 55%;
 		left: 50%;
 		transform: translate(-50%, 0%);
 		display: none;
-		background: linear-gradient(180deg, rgba(154,23,91,0) 0%, rgba(154,23,91,1) 100%);
+		background: linear-gradient(180deg, rgba(154,23,91,0) 0%, rgba(154,23,91,.4) 10%, rgba(154,23,91,1) 100%);
 		width: 100%;
 		height: 50%;
 		
 	}
 
 	.title h3{
-		font-size: 1.8vw;
+		font-size: 1.6vw;
 		padding-left: 30%;
 	}
 	.title p{
-		font-size: 1.3vw;
+		font-size: 1.1vw;
 		padding-left: 40%;
+		font-family: MyriadPro_Regular;
+	}
+
+
+	@media (max-width: 1600px) { 
+		.title h3{
+			font-size: 2vw;
+			padding-left: 30%;
+		}
+		.title p{
+			font-size: 1.5vw;
+			padding-left: 40%;
+		}
 	}
 
 
@@ -163,7 +176,7 @@ export default {
             columns:2;
         }
         .contenido {
-            max-height:350px;
+            max-width:350px;
 		}
 		.contenido h2 {
 			font-size: 3vw;
@@ -187,11 +200,12 @@ export default {
             columns: 1;
         }
         .contenido {
-            max-height:350px;
+            max-width:350px;
+			height: auto;
 		}
 		
 		.title h3{
-		font-size: 8vw;
+		font-size: 6vw;
 
 		}
 		.title {

@@ -4,6 +4,7 @@
      <section>
 		 	<div class="informacion container">
                   <h3><strong>Improve-It Sports Management </strong>es una agencia de representación y asesoramiento enfocada en potenciar a los mejores talentos y actores del deporte. Entregamos resultados, no promesas; utilizando estrategias sólidas e innovadoras que mantienen a nuestros clientes a la vanguardia del mercado.  </h3> 
+				  <br>
                   <h3> En base a nuestra experiencia hemos elaborado un nuevo estilo de representación individualizado y de alto impacto. Las personas que trabajan para nuestra empresa han sido seleccionadas por su dedicación, creatividad y pasión por el deporte.
                   </h3>
 			</div>

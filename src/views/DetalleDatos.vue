@@ -5,19 +5,20 @@
 			<h1 class="titulo">{{datos.titulo}}</h1>
 			<div id="main" >
 				<h2 v-if="datos.video.activo"><strong>Videos</strong></h2>
-				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" @mouseover="cambiar" @mouseleave="volver" style="cursor:pointer" v-if="(datos.video.activo) && (datos.titulo==='#GanaConIndumex')">
+				<iframe class="videos" v-if="datos.video.activo" :src="datos.video.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe class="videos" v-if="(datos.video.activo) && (datos.video.url !== datos.video.poster)" :src="datos.video.poster" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!-- <img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" @mouseover="cambiar" @mouseleave="volver" style="cursor:pointer" v-if="(datos.video.activo) && (datos.titulo==='#GanaConIndumex')">
 				<img class="videos" id="show-modal" @click="showModal = true, numero=3" :src="urlPoster2" @mouseover="cambiar2" @mouseleave="volver2" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo==='#GanaConIndumex')"> 
-				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="datos.video.poster" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo!=='#GanaConIndumex')"> 
-
-
+				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo!=='#GanaConIndumex')">  -->
 				<h2><strong>Imágenes</strong></h2>
 				<img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa" @click="showModal = true, numero=0" style="cursor:pointer">
 				<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2" @click="showModal = true, numero=1" style="cursor:pointer">
 
 				<modal v-if="showModal" @close="showModal = false">
 					<div slot="body" style="text-align: center">
-						<video v-if="numero>1" width="100%"  style="min-width: 100%" controls autoplay><source :src="urls[numero]" type="video/mp4"> Your browser does not support HTML5 video.</video>
+						<!-- <video v-if="numero>1" width="100%"  style="min-width: 100%" controls autoplay><source :src="urls[numero]" type="video/mp4"> Your browser does not support HTML5 video.</video> -->
 						<img style="width: auto; max-width: 100%; max-height: 80%" :src="urls[numero]" v-if="numero<2">
+
 					</div>
 				</modal>
 				
@@ -106,6 +107,14 @@ section {
 
 #main img {
 	max-width: 500px;
+	padding: 20px;
+	width: 100%
+}
+#main iframe {
+	max-width: 500px;
+	min-height: 315px;
+	width: 100%;
+	height: auto;
 	padding: 20px;
 	width: 100%
 }

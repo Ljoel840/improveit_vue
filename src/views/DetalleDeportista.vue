@@ -6,17 +6,17 @@
       <div id="mySidebar" class="sidebar" :style="ancho">
         <a href="javascript:void(0)" class="closebtn" @click="closeNav()">×</a>
         <img class="profile" :src="atleta.imagen.url" alt="Profile" />
-          <h4 style="margin: 0 5px 0 0">{{atleta.titulo}}</h4>
+          <h4 style="margin: 0 5px 0 0"><strong>{{atleta.titulo}}</strong></h4>
           <p class="text-center">{{atleta.boton.texto}}</p>
-		  	<div v-for="parraf in atleta.parrafos" :key="parraf.id">
-				<p >{{parraf.texto}}</p>
+		  	<div v-for="parraf in atleta.parrafos" :key="parraf.id" contenteditable="true" >
+				<p v-html="parraf.texto"></p>
 			</div>
         <a class="botonInformacion" :href="atleta.boton.accion" v-if="atleta.boton.tipo===2" target="_blank">Más Información</a>
       </div>
 
       <div id="main" :style="margen">
         <button class="openbtn" @click="openNav()" v-show="!ocultar">☰ Información Atleta</button>
-        <button class="openbtncel" @click="openNav()" v-show="!ocultar">...</button>
+        <button class="openbtncel" @click="openNavCel()" v-show="!ocultar">...</button>
 
         <div class="tituloNombre" :style="margen">
           <h1>{{atleta.titulo}}</h1>
@@ -66,6 +66,7 @@ export default {
       atleta: this.$route.params.atletaSeleccionado,
 	  ocultar: false,
 	  parrafos: [],
+	  HTMLcontent: null,
       ancho: {
         width: "0",
         color: "#fff"
@@ -74,13 +75,15 @@ export default {
         margin: "0"
 	  },
 	  showModal: false,
-	  showModal2: false
+	  showModal2: false,
     };
   },
   created () {
 	window.scrollTo(0,0);
+	},
+	
+	
 
-    },
   methods: {
     openNav() {
       console.log(this.ancho);
@@ -93,7 +96,17 @@ export default {
       this.ancho.width = "0";
       this.margen.margin = "0";
       this.ocultar = false;
-    }
+	},
+	
+	openNavCel() {
+      console.log(this.ancho);
+      this.ancho.width = "100%";
+      this.margen.margin = "0 0 0 0";
+      this.ocultar = true;
+    },
+
+
+
   }
 };
 </script>
@@ -104,6 +117,7 @@ section {
   border-radius: 12px;
   margin-bottom: 10px;
   color: #fff;
+  font-family: MyriadPro_Regular;
 }
 
 
@@ -112,7 +126,7 @@ section {
         text-align: center;
 		font-size: 7vw;
 		margin: auto;
-		
+		font-family: myriad-pro;
     }
 /* ------------------- */
 
@@ -120,7 +134,7 @@ section {
   height: 80%;
   width: 0;
   position:fixed ;
-  z-index: 1;
+  z-index: 2;
   top: 150px;
   right: 0;
   background-color: #111;
@@ -148,6 +162,7 @@ section {
   padding: 10px;
 }
 
+
 .sidebar .closebtn {
   position: absolute;
   top: 0;
@@ -166,7 +181,7 @@ section {
   position: fixed;
   right: 10px;
   border-radius: 30px 0 0 30px;
-  z-index: 2;
+  z-index: 3;
 }
 
 
@@ -179,7 +194,7 @@ section {
   border: none;
   position: fixed;
   right: 10px;
-  z-index: 2;
+  z-index: 3;
 }
 
 .mensajeVacio {

@@ -8,15 +8,15 @@
 						<div class="contenido" >
 							<div>
 								<h2>{{info.boton.texto}}</h2>
+							<router-link :to="{ name:'detalleDatos', params:{ infoSeleccionada:info}}">
 								<img class="imagen" :src="info.imagen.url">
 								<div class="title">
 									<h3>Campaña:</h3>
 									<h3>{{info.titulo}}</h3>
 								</div>
-							</div>
-							<router-link :to="{ name:'detalleDatos', params:{ infoSeleccionada:info}}">
-								<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 80%; margin-bottom: 80px">
+								<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px">
 							</router-link>
+							</div>
 						</div>
 
 					</div>
@@ -81,6 +81,7 @@ export default {
         border-radius: 10px;
         margin: 0px 0 20px 0;
         justify-content: center;
+		text-align: center;
         
         
     }
@@ -98,7 +99,7 @@ export default {
 
     .contenido {
         /* height:350px; */
-		width: 90%;
+		width: 80%;
         /* max-height:600px; */
         text-align: center;
 		/* overflow:hidden; */
@@ -150,7 +151,7 @@ export default {
 	}
 
 	.title h3{
-		font-size: 2.5vw;
+		font-size: 2vw;
 	}
 
 
