@@ -14,8 +14,10 @@
 									<h3>Campaña:</h3>
 									<h3>{{info.titulo}}</h3>
 								</div>
-								<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px">
 							</router-link>
+								<a :href="info.boton.accion" v-if="info.boton.accion" target="_blank">
+									<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px; float: right">
+								</a>
 							</div>
 						</div>
 
@@ -79,15 +81,15 @@ export default {
         width: 100%;
         background-color: #000;
         border-radius: 10px;
-        margin: 0px 0 20px 0;
+        margin: 0px 0 90px 0;
         justify-content: center;
 		text-align: center;
         
         
     }
 	   .galeria{
-        column-count: 3;
-        column-gap: 2em;
+        column-count: 4;
+        column-gap: 1em;
 
     }
 
@@ -99,7 +101,7 @@ export default {
 
     .contenido {
         /* height:350px; */
-		width: 80%;
+		width: 70%;
         /* max-height:600px; */
         text-align: center;
 		/* overflow:hidden; */
@@ -109,7 +111,7 @@ export default {
 	.contenido h2{
 		color:#fff;
 		text-transform: uppercase;
-		font-size: 2vw
+		font-size: 1.3vw
 	}
 
 	img {
@@ -151,7 +153,7 @@ export default {
 	}
 
 	.title h3{
-		font-size: 2vw;
+		font-size: 1.5vw;
 	}
 
 
@@ -181,7 +183,7 @@ export default {
 		}
 		
 		.title h3{
-		font-size: 8vw;
+		font-size: 6vw;
 
 		}
 		.title {

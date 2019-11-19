@@ -82,11 +82,14 @@ export default {
 	}
 	p, ul  {
 		padding: 0 20%;
-		
+		font-size: 1.3em;
+		line-height: 2em;
+
 
 	}
 	p {
-		margin-top: 3em;
+		margin-top: 2em;
+
 
 	}
 	ul {

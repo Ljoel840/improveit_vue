@@ -80,13 +80,15 @@ export default {
   },
   created () {
 	window.scrollTo(0,0);
+	if (!this.datos) {
+		this.$router.go (-1)
+	}
 	},
 	
 	
 
   methods: {
     openNav() {
-      console.log(this.ancho);
       this.ancho.width = "300px";
       this.margen.margin = "0 300px 0 0";
       this.ocultar = true;
@@ -99,7 +101,6 @@ export default {
 	},
 	
 	openNavCel() {
-      console.log(this.ancho);
       this.ancho.width = "100%";
       this.margen.margin = "0 0 0 0";
       this.ocultar = true;

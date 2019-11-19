@@ -77,7 +77,7 @@
 					</div>
 				</div>
         </div>
-                <p class="copyright text-Left">Delfasoft &#169; 2019 versión 3.3.0 </p>
+                <p class="copyright text-Left">Delfasoft &#169; 2019 versión 3.3.1 </p>
     </footer>
 </template>
 <script>

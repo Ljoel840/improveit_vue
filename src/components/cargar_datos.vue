@@ -219,6 +219,13 @@ export default {
 			padding-left: 40%;
 		}
 
+		.contenido .title {
+		display: inline;
+		text-align: right;
+		padding-right: 10px;
+	}
+
+
     }
 
 

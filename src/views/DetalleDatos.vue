@@ -5,13 +5,16 @@
 			<h1 class="titulo">{{datos.titulo}}</h1>
 			<div id="main" >
 				<h2 v-if="datos.video.activo"><strong>Videos</strong></h2>
-				<iframe class="videos" v-if="datos.video.activo" :src="datos.video.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe class="videos" v-if="(datos.video.activo) && (datos.video.url !== datos.video.poster)" :src="datos.video.poster" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!-- <div v-for="urlVideo in urlVideos" :key="urlVideo.id"> -->
+					<iframe  v-for="urlVideo in urlVideos" :key="urlVideo.id" class="videos"  :src="urlVideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<!-- </div> -->
+				<!-- <iframe class="videos" v-if="datos.video.activo" :src="datos.video.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<iframe class="videos" v-if="(datos.video.activo) && (datos.video.url !== datos.video.poster)" :src="datos.video.poster" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
 				<!-- <img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" @mouseover="cambiar" @mouseleave="volver" style="cursor:pointer" v-if="(datos.video.activo) && (datos.titulo==='#GanaConIndumex')">
 				<img class="videos" id="show-modal" @click="showModal = true, numero=3" :src="urlPoster2" @mouseover="cambiar2" @mouseleave="volver2" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo==='#GanaConIndumex')"> 
 				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo!=='#GanaConIndumex')">  -->
-				<h2><strong>Imágenes</strong></h2>
-				<img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa" @click="showModal = true, numero=0" style="cursor:pointer">
+				<h2 v-if="datos.imagenAlternativa2.url"><strong>Imágenes</strong></h2>
+				<!-- <img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa" @click="showModal = true, numero=0" style="cursor:pointer"> -->
 				<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2" @click="showModal = true, numero=1" style="cursor:pointer">
 
 				<modal v-if="showModal" @close="showModal = false">
@@ -45,16 +48,52 @@ export default {
 	  urlPoster2: require('@/assets/img/poster_video2.jpg'),
   	  showModal: false,
 	  showModal2: false,
-	  urls: []
+	  urls: [],
+	  urlVideos: [],
+	  parrafos: [],
+	  texto: null,
+	  p:null,
+	  prevRoute: null	
+
     };
   },
+	// beforeRouteEnter(to, from, next) {
+	// 	next(vm => {
+	// 	vm.prevRoute = from
+	// 	console.log(vm.prevRoute)
+	// })
+	// },
   created () {
-    window.scrollTo(0,0);
+	if (!this.datos) {
+		this.$router.go (-1)
+	}
+	window.scrollTo(0,0);
 	this.urls.push(this.datos.imagenAlternativa.url)
 	this.urls.push(this.datos.imagenAlternativa2.url)
-	this.urls.push(this.datos.video.url)
-	this.urls.push(this.datos.video.poster)
-	console.log(this.urls)
+	this.texto=this.datos.video.url
+	if (this.datos.video.url) {
+		this.urlVideos.push(this.texto.replace('watch?v=', 'embed/'));
+		if (this.datos.video.url !== this.datos.video.poster){
+			this.texto=this.datos.video.poster
+			this.urlVideos.push(this.texto.replace('watch?v=', 'embed/'))
+		}
+		}
+
+
+	// this.urls.push(this.datos.video.url)
+	// this.urls.push(this.datos.video.poster)
+	this.parrafos = this.datos.parrafos 
+	// console.log(this.datos)
+	for (this.p in this.datos.parrafos) {
+		this.texto = this.datos.parrafos[this.p].texto
+		// console.log(this.texto)
+		if (this.texto.indexOf("https://www.youtube.com/")!==-1){
+			this.urlVideos.push(this.texto.replace('watch?v=', 'embed/'))
+			// console.log(this.urlVideos)
+		}
+	}
+	// console.log(this.urls)
+
 
     },
  
