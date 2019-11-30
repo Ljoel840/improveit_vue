@@ -78,7 +78,7 @@ export default {
         width: 100%;
         background-color: #000;
         border-radius: 10px;
-        margin: 0px 0 20px 0;
+        margin: 0px 0 90px 0;
         text-align: center;
         overflow: hidden;
         
@@ -96,8 +96,8 @@ export default {
     }
 
     .contenido {
-		max-width: 400px;
-		width: 90%;
+		max-width: 300px;
+		width: 80%;
 		height:auto;
 
         text-align: center;

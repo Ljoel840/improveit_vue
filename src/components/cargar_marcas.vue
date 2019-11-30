@@ -16,7 +16,7 @@
 								</div>
 							</router-link>
 								<a :href="info.boton.accion" v-if="info.boton.accion" target="_blank">
-									<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px; float: right">
+									<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px; float: right; margin-top: 20px">
 								</a>
 							</div>
 						</div>

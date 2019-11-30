@@ -80,7 +80,7 @@ export default {
   },
   created () {
 	window.scrollTo(0,0);
-	if (!this.datos) {
+	if (!this.atleta) {
 		this.$router.go (-1)
 	}
 	},
