@@ -34,10 +34,16 @@ export default {
         }
     },
      created () {
-        let datos = axios.post(`${process.env.VUE_APP_RUTA_API}dfs60024`,{
+        let datos = axios.post(`${process.env.API_CONTACT_URL}dfs60024`,{
         proyectoEnc: 'improveit',
         pagina: '/personas'
-        })
+        },{
+			headers: {
+				'Content-Type': 'application/json;charset=UTF-8'
+			},
+			crossDomain:true,
+			withCredentials: true
+		})
         .then(response => {
             this.deportistas = response.data.frontBlogs
             // console.log('deportistas')

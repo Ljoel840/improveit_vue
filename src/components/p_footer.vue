@@ -77,12 +77,17 @@
 					</div>
 				</div>
         </div>
-                <p class="copyright text-Left">Delfasoft &#169; 2019 versión 3.3.2 </p>
+                <p class="copyright text-Left">delfasoft &#169; 2019 versión {{version}}</p>
     </footer>
 </template>
 <script>
 export default {
-	name:'p_footer'
+	name:'p_footer',
+	computed: {
+        version () {
+			return process.env.VUE_APP_VERSION
+        }
+    },
 }
 </script>
 

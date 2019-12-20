@@ -47,7 +47,7 @@ export default {
      created () {
 		// extraer (this.data)
 		// console.log("pagina",this.pag)
-        let datos = axios.post(`${process.env.VUE_APP_RUTA_API}dfs60024`,{
+        let datos = axios.post(`${process.env.API_CONTACT_URL}dfs60024`,{
         proyectoEnc: 'improveit',
         pagina: this.pag
         })

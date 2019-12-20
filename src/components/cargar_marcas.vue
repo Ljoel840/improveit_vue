@@ -15,9 +15,11 @@
 									<h3>{{info.titulo}}</h3>
 								</div>
 							</router-link>
-								<a :href="info.boton.accion" v-if="info.boton.accion" target="_blank">
-									<img class="imagen2" :src="info.imagenAlternativa.url" style="width: 70%; margin-bottom: 40px; float: right; margin-top: 20px">
-								</a>
+								<div class="imagen2">
+									<a :href="info.boton.accion" v-if="info.boton.accion" target="_blank">
+										<img  :src="info.imagenAlternativa.url" style="width: 70%;  float: right; ">
+									</a>
+								</div>
 							</div>
 						</div>
 
@@ -50,7 +52,7 @@ export default {
      created () {
 		// extraer (this.data)
 		// console.log("pagina",this.pag)
-        let datos = axios.post(`${process.env.VUE_APP_RUTA_API}dfs60024`,{
+        let datos = axios.post(`${process.env.API_CONTACT_URL}dfs60024`,{
         proyectoEnc: 'improveit',
         pagina: this.pag
         })
@@ -111,7 +113,8 @@ export default {
 	.contenido h2{
 		color:#fff;
 		text-transform: uppercase;
-		font-size: 1.3vw
+		font-size: 1.3vw;
+		text-align: left;
 	}
 
 	img {
@@ -137,6 +140,15 @@ export default {
 		
 	}
 	
+	.imagen2 {
+		display: table;
+		height: 100px;
+	}
+
+	.imagen2 a {
+		display: table-cell;
+		vertical-align: middle;
+	}
 
 	.title{
 		color: #fff;

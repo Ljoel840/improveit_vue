@@ -61,10 +61,16 @@ export default {
     },
     created () {
         // extraer (this.data)
-        let datos = axios.post(`${process.env.VUE_APP_RUTA_API}dfs60024`,{
+        let datos = axios.post(`${process.env.API_CONTACT_URL}dfs60024`,{
         proyectoEnc: 'improveit',
         pagina: '/'
-        })
+        },{
+			headers: {
+				'Content-Type': 'application/json;charset=UTF-8'
+			},
+			crossDomain:true,
+			withCredentials: true
+		})
         .then(response => {
             this.data = response.data.frontBlogs
         })

@@ -83,6 +83,7 @@ export default {
 	if (!this.atleta) {
 		this.$router.go (-1)
 	}
+	console.log(this.atleta)
 	},
 	
 	
