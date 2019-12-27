@@ -5,25 +5,20 @@
 			<h1 class="titulo">{{datos.titulo}}</h1>
 			<div id="main" >
 				<h2 v-if="datos.video.activo"><strong>Videos</strong></h2>
-				<!-- <div v-for="urlVideo in urlVideos" :key="urlVideo.id"> -->
-					<iframe  v-for="urlVideo in urlVideos" :key="urlVideo.id" class="videos"  :src="urlVideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<!-- </div> -->
-				<!-- <iframe class="videos" v-if="datos.video.activo" :src="datos.video.url" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe class="videos" v-if="(datos.video.activo) && (datos.video.url !== datos.video.poster)" :src="datos.video.poster" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-				<!-- <img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" @mouseover="cambiar" @mouseleave="volver" style="cursor:pointer" v-if="(datos.video.activo) && (datos.titulo==='#GanaConIndumex')">
-				<img class="videos" id="show-modal" @click="showModal = true, numero=3" :src="urlPoster2" @mouseover="cambiar2" @mouseleave="volver2" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo==='#GanaConIndumex')"> 
-				<img class="videos" id="show-modal" @click="showModal = true, numero=2" :src="urlPoster1" style="cursor:pointer" v-if="(datos.video.poster) && (datos.titulo!=='#GanaConIndumex')">  -->
-				<h2 v-if="datos.imagenAlternativa2.url"><strong>Imágenes</strong></h2>
-				<!-- <img :src="datos.imagenAlternativa.url" v-if="datos.imagenAlternativa" @click="showModal = true, numero=0" style="cursor:pointer"> -->
-				<img :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2" @click="showModal = true, numero=1" style="cursor:pointer">
+				<iframe  v-for="urlVideo in urlVideos" :key="urlVideo.id" class="videos"  :src="urlVideo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				<h2 v-if="(datos.imagenAlternativa2.url)||(datos.imagenes)"><strong>Imágenes</strong></h2>
+				<img id="show-modal" @click="showModal = true; urlImg=datos.imagenAlternativa2.url" :src="datos.imagenAlternativa2.url" v-if="datos.imagenAlternativa2" style="cursor:pointer">
+
+				<span v-for="imag in datos.imagenes" :key="imag.id" style="padding:0">
+					<img id="show-modal" @click="showModal=true; urlImg=imag" :src="imag" v-if="imag"  style="cursor:pointer">
+				</span>
 
 				<modal v-if="showModal" @close="showModal = false">
-					<div slot="body" style="text-align: center">
-						<!-- <video v-if="numero>1" width="100%"  style="min-width: 100%" controls autoplay><source :src="urls[numero]" type="video/mp4"> Your browser does not support HTML5 video.</video> -->
-						<img style="width: auto; max-width: 100%; max-height: 80%" :src="urls[numero]" v-if="numero<2">
-
+					<div slot="body">
+						<img  style="width: auto; max-width: 100%; max-height: 80%" :src="urlImg">
 					</div>
 				</modal>
+
 				
 			</div>
 		</div>
@@ -53,7 +48,11 @@ export default {
 	  parrafos: [],
 	  texto: null,
 	  p:null,
-	  prevRoute: null	
+	  prevRoute: null,
+	  i:null,
+	  f:null,
+	  cadena:'',
+	  urlyoutube:'',	
 
     };
   },
@@ -68,6 +67,7 @@ export default {
 		this.$router.go (-1)
 	}
 	window.scrollTo(0,0);
+	// console.log(this.datos);
 	this.urls.push(this.datos.imagenAlternativa.url)
 	this.urls.push(this.datos.imagenAlternativa2.url)
 	this.texto=this.datos.video.url
@@ -80,20 +80,32 @@ export default {
 		}
 
 
-	// this.urls.push(this.datos.video.url)
-	// this.urls.push(this.datos.video.poster)
-	this.parrafos = this.datos.parrafos 
-	// console.log(this.datos)
-	for (this.p in this.datos.parrafos) {
-		this.texto = this.datos.parrafos[this.p].texto
-		// console.log(this.texto)
-		if (this.texto.indexOf("https://www.youtube.com/")!==-1){
-			this.urlVideos.push(this.texto.replace('watch?v=', 'embed/'))
-			// console.log(this.urlVideos)
-		}
-	}
-	// console.log(this.urls)
-
+	// this.parrafos = this.datos.parrafos 
+	// console.log(this.datos.parrafos[0].texto)
+	// for (this.p in this.datos.parrafos) {
+	// 	this.texto = this.datos.parrafos[this.p].texto
+	// 	if (this.texto.indexOf("https://www.youtube.com/")!==-1){
+	// 		this.urlVideos.push(this.texto.replace('watch?v=', 'embed/'))
+	// 	}
+	// }
+	this.cadena=this.datos.parrafos[0].texto
+	console.log(this.cadena)
+	do {
+		this.i=this.cadena.indexOf("https://www.youtube.com/")
+			if (this.i>=0) {
+				this.f=this.cadena.indexOf("></oembed>")
+				console.log('f: '+this.f+' i: '+this.i)
+				this.urlyoutube = this.cadena.substr(this.i,this.f-this.i-1);
+				console.log('urlyoutube: '+this.urlyoutube)
+				this.urlVideos.push(this.urlyoutube.replace('watch?v=', 'embed/'))
+				// this.cadena2=this.cadena.substr(this.f+10,this.cadena.length-this.f+10)
+				this.cadena=this.cadena.substr(this.f+10,this.cadena.length-this.f+10)
+				console.log('cadena: '+this.cadena)
+				}
+			console.log('Valor de i: '+this.i)
+			console.log('longitud de cadena: '+this.cadena.length)
+	} while (this.i>=0);
+	console.log(this.urlVideos)
 
     },
  
@@ -109,11 +121,10 @@ export default {
 	  },
 	   volver2(){
 		  this.urlPoster2= require('@/assets/img/poster_video2.jpg')
-	  },
-	  
+	  }
     
   }
-};
+}
 
 </script>
 

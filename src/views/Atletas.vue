@@ -3,18 +3,17 @@
         
         <div class="container-fluid" style="padding: 0; margin-top: 130px">
             <div class="tope" >
-                <h1><strong>Campañas Empresariales y Activación de Marcas</strong></h1>
+                <h1><strong>Representación y Asesoramiento de Deportistas de Alto Rendimiento</strong></h1>
             </div>
         </div>
         
         
         <div class="textoDescripcion container">
-            <h3>Identificamos la conexión perfecta entre marcas y deportistas, aprovechando ideas creativas y atributos únicos para contar historias. Trabajamos con las empresas para aprovechar al máximo sus inversiones en patrocinio y marketing deportivo</h3>
-
+            <h3>Trabajamos con nuestros atletas en la creación de marcas personales y generación de ingresos a través de asociaciones comerciales. Damos el soporte necesario para que, sin importar el nivel inicial de su carrera, todos nuestros deportistas puedan llegar al máximo de su potencial.</h3>
         </div>
 
         
-        <cargar_marcas pag='/puntajes'></cargar_marcas>
+        <cargar_deportistas></cargar_deportistas>
 
         <br>
         <p_footer/>
@@ -23,36 +22,35 @@
     </article>
 </template>
 <script>
-import cargar_marcas from '@/components/cargar_marcas.vue';
+import cargar_deportistas from '@/components/cargar_deportistas.vue';
 import p_footer from '@/components/p_footer.vue';
 import extraer from './extraer'
 
 
 export default {
-    name: 'marcas',
+    name: 'deportistas',
     components: {
     p_footer,
-    cargar_marcas
+    cargar_deportistas
     },
     data: () => ({
         campos: [],
         error: null,
-	}),
-	created () {
+    }),
+    created () {
     window.scrollTo(0,0);
-    },
 
+    },
 }
 </script>
 <style scoped>
     article {
         background-color: #000;
     }
-		strong {
+
+	strong {
 		font-weight: bolder;
 	}
-
-
     .tope{
         background-size: auto 200px;
         background-repeat: no-repeat;
@@ -67,40 +65,53 @@ export default {
     }
 
     .tope {
-        background-image: url("../assets/img/imagen2.jpg");
-        background-position: right;
+        background-image: url("../assets/img/imagen1.jpg");
+        background-position: left;
         background-color: #000;
     }
 
     .tope h1 {
-        color: white; text-align: center; font-size: 3vh; padding: 10px 1em;text-transform: uppercase; 
+        color: white; text-align: center; font-size: 3vh; padding: 10px 1em; text-transform: uppercase;
+		 
 
     }
+	.textoDescripcion{
+		margin: auto;
+	}
 
     .textoDescripcion h3 {
         color: white;
         text-align: justify;
+		font-family: MyriadPro_Regular;
         padding: 2em;
         font-size: 1.3em;
 		max-width: 1200px;
 		line-height: 2em;
-		font-family: MyriadPro_Regular;
+
         
     }
 
     @media only screen and (max-width: 768px) {
         .textoDescripcion h3 {
-            font-size: 1.2em;
+            font-size: 1.3em;
         }
         .tope h1 {
             font-size: 3vh;
+      
+            
 
         }
-		.textoDescripcion h3 {
-			padding: 1em 0;
-
-		}
-
+        
 	}
+
+	@media only screen and (max-width: 400px) {
+        .textoDescripcion h3 {
+            font-size: 1.2em;
+			padding: 20px 0;
+        }
+        
+        
+	}
+
 
 </style>

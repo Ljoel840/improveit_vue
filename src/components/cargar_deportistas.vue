@@ -4,7 +4,8 @@
                 <h1 v-if="!deportistas"> NO HAY ATLETAS CARGADOS</h1>
                 <div class="row mt-30" style="color:black" v-if="deportistas">
                     <div class="col-md-3 col-sm-6" v-for="(atleta, index) in deportistas" :key="atleta.id" style="padding:20px">
-                        <router-link :to="{ name:'detalleDeportista', params:{ atletaSeleccionado:atleta}}">
+                        <!-- <router-link :to="{ name:'detalleDeportista', params:{ atletaSeleccionado:atleta}}"> -->
+                        <router-link :to="{ name:'atleta', params:{ atletaSeleccionado: quitarespacios(atleta.titulo)}}">
 							<div :class="[{box16:(index % 2 == 0)}, {box15:!(index % 2 == 0)}]">
 								<img :src="atleta.imagen.url">
 								<div class="box-content">
@@ -55,10 +56,12 @@ export default {
             this.data = '';
         })
 
-    
-       
-
-    },
+	},
+	methods: {
+		quitarespacios(nombre){
+			return nombre.replace(/ /g, "_")
+		}
+	},
    
 }
 </script>

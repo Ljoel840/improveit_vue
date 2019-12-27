@@ -14,6 +14,12 @@ const routes = [
     component: () => import('@/views/Deportistas.vue')
   },
   {
+    path: '/atletas',
+    name: 'atletas',
+    component: () => import('@/views/Atletas.vue')
+  },
+
+  {
     path:'/detalleDeportista',
     name: 'detalleDeportista',
     component: () => import('@/views/DetalleDeportista')
@@ -52,6 +58,11 @@ const routes = [
     path: '/contacto',
     name: 'contacto',
     component: () => import('../views/Contacto.vue')
+  },
+  {
+    path: '/atleta/:atletaSeleccionado',
+    name: 'atleta',
+    component: () => import('../views/Atleta.vue')
   }
 
 ]
